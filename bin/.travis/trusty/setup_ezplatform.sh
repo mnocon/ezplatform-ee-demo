@@ -14,8 +14,8 @@
 # Determine eZ Platform Build dir as relative to current script path
 EZPLATFORM_BUILD_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../../.." && pwd )"
 
-# Source .env first to make sure we don't override any variables
-. ${EZPLATFORM_BUILD_DIR}/.env
+# # Source .env first to make sure we don't override any variables
+# . ${EZPLATFORM_BUILD_DIR}/.env
 
 DEPENDENCY_PACKAGE_DIR=$3
 
