@@ -54,6 +54,7 @@
         "ezsystems/ezplatform-richtext": "^1.0@dev",
         "ezsystems/ezplatform-solr-search-engine": "^1.5.4@dev",
         "ezsystems/ezplatform-standard-design": "^0.1@dev",
+        "ezsystems/ezplatform-workflow": "^1.0@dev",
         "ezsystems/ezpublish-kernel": "^7.4@dev",
         "ezsystems/ezstudio-personalized-block": "~2.1@rc",
         "ezsystems/flex-workflow": "^3.2@dev",
