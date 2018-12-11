@@ -11,6 +11,7 @@ class EnterpriseDemoEnvironmentConstants extends EnterpriseEnvironmentConstants
 {
     /** @var string[] */
     public $values;
+
     public function __construct()
     {
         parent::__construct();
