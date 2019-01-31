@@ -16,6 +16,8 @@ class DemoContentListBlock extends ContentListBlock
         $this->addContent('Home/Places & Tastes/Tastes');
         $this->setInputField('Limit', '5');
         $this->selectContentType('Article');
+        $this->switchTab('Design');
+        $this->setLayout('cards');
         $this->submitForm();
     }
 
