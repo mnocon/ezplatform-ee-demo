@@ -6124,7 +6124,7 @@
                </itemizedlist>
             </section>
 
-        image: 'vendor/ezsystems/ezplatform-demo-assets/images/products/cheesecake_figs.jpg'
+        image: 'vendor/ezsystems/ezplatform-demo-assets/images/products/spanish_seafood_paella.jpg'
         price: 30
         serving: 8
         spicy: [0]
@@ -6141,7 +6141,7 @@
             - { tag_keyword:'Shrimp' }
     references:
         -
-            identifier: ref_content_product__home__cheesecake_figs
+            identifier: ref_content_product__home__spanish_seafood_paella
             attribute: content_id
         -
             identifier: ref_location_product__home__cheesecake_figs
@@ -6152,7 +6152,7 @@
     type: content
     mode: update
     match:
-        content_id: reference:ref_content_product__home__cheesecake_figs
+        content_id: reference:ref_content_product__home__spanish_seafood_paella
     lang: fre-FR
     attributes:
         title: 'Paella de fruits de mer espagnols'
@@ -6258,7 +6258,7 @@
               </itemizedlist>
             </section>
 
-        image: 'vendor/ezsystems/ezplatform-demo-assets/images/products/cheesecake_figs.jpg'
+        image: 'vendor/ezsystems/ezplatform-demo-assets/images/products/spanish_seafood_paella.jpg'
         price: 30
         serving: 8
         spicy: [0]
@@ -6279,7 +6279,7 @@
     type: content
     mode: update
     match:
-        content_id: reference:ref_content_product__home__cheesecake_figs
+        content_id: reference:ref_content_product__home__spanish_seafood_paella
     lang: ger-DE
     attributes:
         title: 'Spanische Meeresfrüchte Paella'
@@ -6386,7 +6386,7 @@
               </itemizedlist>
             </section>
 
-        image: 'vendor/ezsystems/ezplatform-demo-assets/images/products/cheesecake_figs.jpg'
+        image: 'vendor/ezsystems/ezplatform-demo-assets/images/products/spanish_seafood_paella.jpg'
         price: 30
         serving: 8
         spicy: [0]
@@ -6407,7 +6407,7 @@
     type: content
     mode: update
     match:
-        content_id: reference:ref_content_product__home__cheesecake_figs
+        content_id: reference:ref_content_product__home__spanish_seafood_paella
     lang: nor-NO
     attributes:
         title: 'Spansk sjømat paella'
@@ -6505,7 +6505,7 @@
               </itemizedlist>
             </section>
 
-        image: 'vendor/ezsystems/ezplatform-demo-assets/images/products/cheesecake_figs.jpg'
+        image: 'vendor/ezsystems/ezplatform-demo-assets/images/products/spanish_seafood_paella.jpg'
         price: 30
         serving: 8
         spicy: [0]
