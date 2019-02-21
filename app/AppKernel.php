@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new Novactive\Bundle\eZSEOBundle\NovaeZSEOBundle(),
             new Kaliop\eZMigrationBundle\EzMigrationBundle(),
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
+            new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),
             // eZ Systems
             new EzSystems\PlatformHttpCacheBundle\EzSystemsPlatformHttpCacheBundle(),
             new EzSystems\PlatformFastlyCacheBundle\EzSystemsPlatformFastlyCacheBundle(),
