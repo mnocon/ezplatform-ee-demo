@@ -56,7 +56,9 @@ class AppKernel extends Kernel
             new EzSystems\EzPlatformCronBundle\EzPlatformCronBundle(),
             new EzSystems\EzPlatformEncoreBundle\EzSystemsEzPlatformEncoreBundle(),
             new EzSystems\CommentsBundle\EzSystemsCommentsBundle(),
+            new EzSystems\EzPlatformGraphQL\EzSystemsEzPlatformGraphQLBundle(),
             // Dependencies
+            new Overblog\GraphQLBundle\OverblogGraphQLBundle(),
             new Lolautruche\EzCoreExtraBundle\EzCoreExtraBundle(),
             new Netgen\TagsBundle\NetgenTagsBundle(),
             // eZ Platform EE
@@ -85,6 +87,7 @@ class AppKernel extends Kernel
                 $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
                 $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
                 $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+                $bundles[] = new Overblog\GraphiQLBundle\OverblogGraphiQLBundle();
         }
 
         return $bundles;
