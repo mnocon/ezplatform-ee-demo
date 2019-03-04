@@ -51,6 +51,7 @@
         "ezsystems/ezplatform-graphql": "^1.0@dev",
         "ezsystems/ezplatform-http-cache": "~0.8@dev",
         "ezsystems/ezplatform-http-cache-fastly": "^1.1.1@dev",
+        "ezsystems/ezplatform-matrix-fieldtype": "^1.0@dev",
         "ezsystems/ezplatform-page-builder": "^1.2@dev",
         "ezsystems/ezplatform-page-fieldtype": "^1.2@dev",
         "ezsystems/ezplatform-richtext": "^1.1@dev",

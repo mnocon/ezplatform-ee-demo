@@ -57,8 +57,10 @@ class AppKernel extends Kernel
             new EzSystems\EzPlatformEncoreBundle\EzSystemsEzPlatformEncoreBundle(),
             new EzSystems\CommentsBundle\EzSystemsCommentsBundle(),
             new EzSystems\EzPlatformGraphQL\EzSystemsEzPlatformGraphQLBundle(),
-            // Dependencies
+            new EzSystems\EzPlatformMatrixFieldtypeBundle\EzPlatformMatrixFieldtypeBundle(),
+            // OverblogGraphQLBundle has to be loaded after EzSystemsEzPlatformGraphQLBundle
             new Overblog\GraphQLBundle\OverblogGraphQLBundle(),
+            // Dependencies
             new Lolautruche\EzCoreExtraBundle\EzCoreExtraBundle(),
             new Netgen\TagsBundle\NetgenTagsBundle(),
             // eZ Platform EE
