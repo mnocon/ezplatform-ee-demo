@@ -70,7 +70,7 @@
         "gregwar/captcha": "^1.1.7",
         "gregwar/captcha-bundle": "^2.0.6",
         "incenteev/composer-parameter-handler": "^2.1.3",
-        "kaliop/ezmigrationbundle": "^4.7",
+        "kaliop/ezmigrationbundle": "^5.8",
         "knplabs/knp-menu-bundle": "^2.2.1",
         "leafo/scssphp": "^0.7.7",
         "netgen/tagsbundle": "^3.1@dev",

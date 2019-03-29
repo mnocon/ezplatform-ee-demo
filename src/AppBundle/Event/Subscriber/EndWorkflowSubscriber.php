@@ -72,7 +72,7 @@ class EndWorkflowSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            MVCEvents::API_SIGNAL => ['onPublishVersionSignal', 0],
+            MVCEvents::API_SIGNAL => ['onPublishVersionSignal', -50],
         ];
     }
 

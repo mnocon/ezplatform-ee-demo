@@ -83,7 +83,7 @@ class PublishOnLastStageSubscriber implements EventSubscriberInterface
 
             if ($isLastStage) {
                 $this->permissionResolver->sudo(function () use ($event) {
-                    if (!$event->getWorkflowMetadata()->versionInfo->isPublished()) {
+                    if ($event->getWorkflowMetadata()->versionInfo->isDraft()) {
                         $this->contentService->publishVersion($event->getWorkflowMetadata()->versionInfo);
                     }
                 }, $this->repository);
