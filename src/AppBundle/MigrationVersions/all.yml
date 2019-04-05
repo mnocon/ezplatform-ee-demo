@@ -507,7 +507,7 @@
             type: ezauthor
             name: Author
             description: 'Blog post author'
-            required: true
+            required: false
             searchable: true
             info-collector: false
             disable-translation: false
