@@ -10,16 +10,16 @@
 {% endblock %}
 
 {% block ez_recommendations %}
-    {% if ez_reco_enabled() and not location.isDraft %}
-        {{ yc_show_recommendations(
-            contentId = content.id,
-            scenario = 'article',
-            limit = '3',
-            contentType = 'article',
-            template = 'recommendations',
-            fields = ['title', 'intro', 'image', 'uri']
-        ) }}
-    {% endif %}
+{#    {% if ez_reco_enabled() and not location.isDraft %}#}
+{#        {{ yc_show_recommendations(#}
+{#            contentId = content.id,#}
+{#            scenario = 'article',#}
+{#            limit = '3',#}
+{#            contentType = 'article',#}
+{#            template = 'recommendations',#}
+{#            fields = ['title', 'intro', 'image', 'uri']#}
+{#        ) }}#}
+{#    {% endif %}#}
 {% endblock %}
 
 {% block content %}

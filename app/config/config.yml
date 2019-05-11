@@ -104,7 +104,7 @@ twig:
 assetic:
     debug: '%kernel.debug%'
     use_controller: '%kernel.debug%'
-    bundles: [ EzPlatformAdminUiBundle, NetgenTagsBundle ]
+    bundles: [ EzPlatformAdminUiBundle ] # NetgenTagsBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -185,12 +185,12 @@ jms_translation:
             excluded_dirs: [Behat, Tests]
             output_format: "xlf"
 
-ez_platform_automated_translation:
-    system:
-        default:
-            configurations:
-                google:
-                    apiKey: '%env(GOOGLE_TRANSLATE_API_KEY)%'
+#ez_platform_automated_translation:
+#    system:
+#        default:
+#            configurations:
+#                google:
+#                    apiKey: '%env(GOOGLE_TRANSLATE_API_KEY)%'
 
 gregwar_captcha:
     as_url: true

@@ -10,16 +10,16 @@
 {% endblock %}
 
 {% block ez_recommendations %}
-    {% if ez_reco_enabled() and not location.isDraft %}
-        {{ yc_show_recommendations(
-            contentId = content.id,
-            scenario = 'visited',
-            limit = '3',
-            contentType = 'place',
-            template = 'recommendations',
-            fields = ['name', 'intro', 'image', 'uri']
-        ) }}
-    {% endif %}
+{#    {% if ez_reco_enabled() and not location.isDraft %}#}
+{#        {{ yc_show_recommendations(#}
+{#            contentId = content.id,#}
+{#            scenario = 'visited',#}
+{#            limit = '3',#}
+{#            contentType = 'place',#}
+{#            template = 'recommendations',#}
+{#            fields = ['name', 'intro', 'image', 'uri']#}
+{#        ) }}#}
+{#    {% endif %}#}
 {% endblock %}
 
 {% block content %}

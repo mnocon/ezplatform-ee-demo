@@ -1,8 +1,8 @@
--
-    type: reference
-    mode: load
-    file: 'src/AppBundle/MigrationVersions/References/references.yml'
-    overwrite: true
+#-
+#    type: reference
+#    mode: load
+#    file: 'src/AppBundle/MigrationVersions/References/references.yml'
+#    overwrite: true
 
 # languages French 4, German 8, Norwegian 16
 -

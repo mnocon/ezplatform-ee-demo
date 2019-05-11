@@ -29,7 +29,7 @@ class PlatformEEDemoInstaller extends CoreInstaller
 
         $migrationCommands = [
             'cache:clear',
-            'kaliop:migration:migrate --path=src/AppBundle/MigrationVersions/tags.yml -n',
+            //'kaliop:migration:migrate --path=src/AppBundle/MigrationVersions/tags.yml -n',
             'kaliop:migration:migrate --path=src/AppBundle/MigrationVersions/languages.yml -v -n -u',
             'kaliop:migration:migrate --path=src/AppBundle/MigrationVersions/product_list.yml -n -u',
             'kaliop:migration:migrate --path=src/AppBundle/MigrationVersions/all.yml -n -u',

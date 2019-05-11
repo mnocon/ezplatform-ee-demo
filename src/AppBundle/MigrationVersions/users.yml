@@ -112,23 +112,23 @@
             disable-translation: false
             category: content
             position: 5
-        -
-            identifier: interests
-            type: eztags
-            name: Interests
-            #description: {  }
-            required: false
-            searchable: true
-            info-collector: false
-            disable-translation: false
-            category: content
-            position: 6
-            field-settings:
-                hideRootTag: false
-                editView: Default
-            validator-configuration:
-                TagsValueValidator:
-                    subTreeLimit: reference:ref_tag_user_segments
+#        -
+#            identifier: interests
+#            type: eztags
+#            name: Interests
+#            #description: {  }
+#            required: false
+#            searchable: true
+#            info-collector: false
+#            disable-translation: false
+#            category: content
+#            position: 6
+#            field-settings:
+#                hideRootTag: false
+#                editView: Default
+#            validator-configuration:
+#                TagsValueValidator:
+#                    subTreeLimit: reference:ref_tag_user_segments
     references:
         -
             identifier: ref_content_type_id__user
@@ -344,10 +344,10 @@
              path: 'vendor/ezsystems/ezplatform-demo-assets/images/users/Christine_Clark.jpg'
              filename: Christine_Clark.jpg
              alternativeText: 'Christine Clark'
-         interests:
-            - { tag_id: reference:ref_tag_user_segments__foodie }
-            - { tag_id: reference:ref_tag_user_segments__chef }
-            - { tag_id: reference:ref_tag_user_segments__traveller }
+#         interests:
+#            - { tag_id: reference:ref_tag_user_segments__foodie }
+#            - { tag_id: reference:ref_tag_user_segments__chef }
+#            - { tag_id: reference:ref_tag_user_segments__traveller }
 
 # James
 -
@@ -372,9 +372,9 @@
          content_id: reference:ref_user_james
      attributes:
          signature: James
-         interests:
-            - { tag_id: reference:ref_tag_user_segments__blogger }
-            - { tag_id: reference:ref_tag_user_segments__traveller }
+#         interests:
+#            - { tag_id: reference:ref_tag_user_segments__blogger }
+#            - { tag_id: reference:ref_tag_user_segments__traveller }
 
 # George
 -
@@ -399,8 +399,8 @@
          content_id: reference:ref_user_george
      attributes:
          signature: George
-         interests:
-            - { tag_id: reference:ref_tag_user_segments__chef }
+#         interests:
+#            - { tag_id: reference:ref_tag_user_segments__chef }
 
 -
     type: user

@@ -1,3 +1,4 @@
+{#
 {% javascripts
     '%kernel.root_dir%/../vendor/components/handlebars.js/handlebars.min.js'
     '@EzSystemsRecommendationBundle/Resources/public/js/recommendationtemplaterenderer.js'
@@ -9,3 +10,4 @@
 {% if content is defined %}
     {{ yc_track_user(content.id) }}
 {% endif %}
+#}

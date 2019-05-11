@@ -126,25 +126,25 @@
             disable-translation: true
             default-value: true
             position: 6
-        -
-            type: eztags
-            name: tags
-            identifier: tags
-            category: content
-            position: 7
-            field-settings:
-                hideRootTag: false
-        -
-            type: novaseometas
-            name: Metas
-            identifier: metas
-            description: 'Metas for Search Engine Optimizations'
-            required: false
-            info-collector: false
-            searchable: false # CANNOT be searchable
-            disable-translation: false
-            position: 100
-            category: metadata
+#        -
+#            type: eztags
+#            name: tags
+#            identifier: tags
+#            category: content
+#            position: 7
+#            field-settings:
+#                hideRootTag: false
+#        -
+#            type: novaseometas
+#            name: Metas
+#            identifier: metas
+#            description: 'Metas for Search Engine Optimizations'
+#            required: false
+#            info-collector: false
+#            searchable: false # CANNOT be searchable
+#            disable-translation: false
+#            position: 100
+#            category: metadata
     references:
         -
             identifier: ref_content_type_id__folder
@@ -217,13 +217,13 @@
             identifier: image
             category: content
 
-        -
-            type: eztags
-            name: Tags
-            identifier: tags
-            category: content
-            field-settings:
-                hideRootTag: false
+#        -
+#            type: eztags
+#            name: Tags
+#            identifier: tags
+#            category: content
+#            field-settings:
+#                hideRootTag: false
     references:
         -
             identifier: ref_content_type_id__image
@@ -352,13 +352,13 @@
             category: metadata
             field-settings:
                 useSeconds: false
-        -
-            type: eztags
-            name: tags
-            identifier: tags
-            category: metadata
-            field-settings:
-                hideRootTag: false
+#        -
+#            type: eztags
+#            name: tags
+#            identifier: tags
+#            category: metadata
+#            field-settings:
+#                hideRootTag: false
 
 # Blog content type
 -
@@ -405,30 +405,30 @@
             disable-translation: false
             category: content
             position: 3
-        -
-            identifier: tags
-            type: eztags
-            name: tags
-            required: false
-            searchable: true
-            info-collector: false
-            disable-translation: false
-            category: content
-            position: 4
-            field-settings:
-                hideRootTag: false
-                editView: Default
-        -
-            identifier: metas
-            type: novaseometas
-            name: Metas
-            description: 'Metas for Search Engine Optimizations'
-            required: false
-            searchable: false
-            info-collector: false
-            disable-translation: false
-            category: metadata
-            position: 100
+#        -
+#            identifier: tags
+#            type: eztags
+#            name: tags
+#            required: false
+#            searchable: true
+#            info-collector: false
+#            disable-translation: false
+#            category: content
+#            position: 4
+#            field-settings:
+#                hideRootTag: false
+#                editView: Default
+#        -
+#            identifier: metas
+#            type: novaseometas
+#            name: Metas
+#            description: 'Metas for Search Engine Optimizations'
+#            required: false
+#            searchable: false
+#            info-collector: false
+#            disable-translation: false
+#            category: metadata
+#            position: 100
 
 # blog post content type
 -
@@ -524,33 +524,33 @@
             disable-translation: false
             category: content
             position: 7
-        -
-            identifier: tags
-            type: eztags
-            name: tags
-            #description: {  }
-            required: false
-            searchable: true
-            info-collector: false
-            disable-translation: false
-            category: content
-            position: 8
-            field-settings:
-                hideRootTag: false
-                editView: Default
-#            validator-configuration:
-#                TagsValueValidator: { subTreeLimit: 0, maxTags: 0 }
-        -
-            identifier: metas
-            type: novaseometas
-            name: Metas
-            description: 'Metas for Search Engine Optimizations'
-            required: false
-            searchable: false
-            info-collector: false
-            disable-translation: false
-            category: metadata
-            position: 100
+#        -
+#            identifier: tags
+#            type: eztags
+#            name: tags
+#            #description: {  }
+#            required: false
+#            searchable: true
+#            info-collector: false
+#            disable-translation: false
+#            category: content
+#            position: 8
+#            field-settings:
+#                hideRootTag: false
+#                editView: Default
+##            validator-configuration:
+##                TagsValueValidator: { subTreeLimit: 0, maxTags: 0 }
+#        -
+#            identifier: metas
+#            type: novaseometas
+#            name: Metas
+#            description: 'Metas for Search Engine Optimizations'
+#            required: false
+#            searchable: false
+#            info-collector: false
+#            disable-translation: false
+#            category: metadata
+#            position: 100
 
 # place content type
 -
@@ -652,20 +652,20 @@
             disable-translation: false
             category: content
             position: 8
-        -
-            identifier: tags
-            type: eztags
-            name: tags
-            #description: ''
-            required: false
-            searchable: true
-            info-collector: false
-            disable-translation: false
-            category: content
-            position: 9
-            field-settings:
-                hideRootTag: false
-                editView: Default
+#        -
+#            identifier: tags
+#            type: eztags
+#            name: tags
+#            #description: ''
+#            required: false
+#            searchable: true
+#            info-collector: false
+#            disable-translation: false
+#            category: content
+#            position: 9
+#            field-settings:
+#                hideRootTag: false
+#                editView: Default
         -
             identifier: publication_date
             type: ezdatetime
@@ -681,17 +681,17 @@
                 defaultType: 1
                 useSeconds: false
                 dateInterval: null
-        -
-            identifier: metas
-            type: novaseometas
-            name: Metas
-            description: 'Metas for Search Engine Optimizations'
-            required: false
-            searchable: false
-            info-collector: false
-            disable-translation: false
-            category: metadata
-            position: 100
+#        -
+#            identifier: metas
+#            type: novaseometas
+#            name: Metas
+#            description: 'Metas for Search Engine Optimizations'
+#            required: false
+#            searchable: false
+#            info-collector: false
+#            disable-translation: false
+#            category: metadata
+#            position: 100
 
 # Place list content type
 -
@@ -749,17 +749,17 @@
             disable-translation: false
             category: content
             position: 9
-        -
-            identifier: metas
-            type: novaseometas
-            name: Metas
-            description: 'Metas for Search Engine Optimizations'
-            required: false
-            searchable: false
-            info-collector: false
-            disable-translation: false
-            category: metadata
-            position: 100
+#        -
+#            identifier: metas
+#            type: novaseometas
+#            name: Metas
+#            description: 'Metas for Search Engine Optimizations'
+#            required: false
+#            searchable: false
+#            info-collector: false
+#            disable-translation: false
+#            category: metadata
+#            position: 100
 
 # about content type
 -
@@ -817,17 +817,17 @@
             disable-translation: false
             category: content
             position: 4
-        -
-            identifier: metas
-            type: novaseometas
-            name: Metas
-            description: 'Metas for Search Engine Optimizations'
-            required: false
-            searchable: false
-            info-collector: false
-            disable-translation: false
-            category: metadata
-            position: 100
+#        -
+#            identifier: metas
+#            type: novaseometas
+#            name: Metas
+#            description: 'Metas for Search Engine Optimizations'
+#            required: false
+#            searchable: false
+#            info-collector: false
+#            disable-translation: false
+#            category: metadata
+#            position: 100
 
 # subscribe content type
 -
@@ -874,17 +874,17 @@
             disable-translation: false
             category: content
             position: 3
-        -
-            identifier: metas
-            type: novaseometas
-            name: Metas
-            description: 'Metas for Search Engine Optimizations'
-            required: false
-            searchable: false
-            info-collector: false
-            disable-translation: false
-            category: metadata
-            position: 100
+#        -
+#            identifier: metas
+#            type: novaseometas
+#            name: Metas
+#            description: 'Metas for Search Engine Optimizations'
+#            required: false
+#            searchable: false
+#            info-collector: false
+#            disable-translation: false
+#            category: metadata
+#            position: 100
 
 # delete previous file content type
 -
@@ -938,20 +938,20 @@
             disable-translation: false
             category: content
             position: 3
-        -
-            identifier: tags
-            type: eztags
-            name: tags
-            description: {  }
-            required: false
-            searchable: true
-            info-collector: false
-            disable-translation: false
-            category: content
-            position: 5
-            field-settings:
-                hideRootTag: false
-                editView: Default
+#        -
+#            identifier: tags
+#            type: eztags
+#            name: tags
+#            description: {  }
+#            required: false
+#            searchable: true
+#            info-collector: false
+#            disable-translation: false
+#            category: content
+#            position: 5
+#            field-settings:
+#                hideRootTag: false
+#                editView: Default
     references:
         -
             identifier: ref_content_type_id__file

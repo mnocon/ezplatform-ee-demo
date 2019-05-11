@@ -61,9 +61,9 @@ ezplatform.ee.flex_workflow:
 ezplatform.ee.workflow:
     resource: '@EzPlatformWorkflowBundle/Resources/config/routing.yml'
 
-recommendationBundleRestRoutes:
-    resource: "@EzSystemsRecommendationBundle/Resources/config/routing_rest.yml"
-    prefix:   %ezpublish_rest.path_prefix%
+#recommendationBundleRestRoutes:
+#    resource: "@EzSystemsRecommendationBundle/Resources/config/routing_rest.yml"
+#    prefix:   %ezpublish_rest.path_prefix%
 
 fos.js_routing:
     resource: '@FOSJsRoutingBundle/Resources/config/routing/routing.xml'
@@ -71,13 +71,13 @@ fos.js_routing:
 ezplatform.httpcache:
     resource: '@EzSystemsPlatformHttpCacheBundle/Resources/config/routing.yml'
 
-_eztagsRoutes:
-    resource: "@NetgenTagsBundle/Resources/config/routing.yml"
+#_eztagsRoutes:
+#    resource: "@NetgenTagsBundle/Resources/config/routing.yml"
 
-_novaezseoRoutes:
-    resource: "@NovaeZSEOBundle/Controller/"
-    type:     annotation
-    prefix:   /
+#_novaezseoRoutes:
+#    resource: "@NovaeZSEOBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
 
 app.submitted:
     path: /contact/submitted
