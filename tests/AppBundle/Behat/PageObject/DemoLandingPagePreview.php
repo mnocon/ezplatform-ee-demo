@@ -5,8 +5,8 @@
  */
 namespace Tests\AppBundle\Behat\PageObject;
 
-use EzSystems\EzPlatformAdminUi\Behat\Helper\EzEnvironmentConstants;
-use EzSystems\EzPlatformAdminUi\Behat\Helper\UtilityContext;
+use EzSystems\Behat\Core\Environment\EnvironmentConstants;
+use EzSystems\Behat\Browser\Context\BrowserContext;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageObject\LandingPagePreview;
 
 class DemoLandingPagePreview extends LandingPagePreview
@@ -18,8 +18,8 @@ class DemoLandingPagePreview extends LandingPagePreview
 
     public function getDefaultPreviewData(): ?array
     {
-        if ($this->pageTitle === EzEnvironmentConstants::get('MAIN_LANDING_PAGE_HEADER')) {
-            return [['blockType', 'parameter1'], ['Hero', EzEnvironmentConstants::get('MAIN_LANDING_PAGE_HEADER')]];
+        if ($this->pageTitle === EnvironmentConstants::get('MAIN_LANDING_PAGE_HEADER')) {
+            return [['blockType', 'parameter1'], ['Hero', EnvironmentConstants::get('MAIN_LANDING_PAGE_HEADER')]];
         }
 
         return parent::getDefaultPreviewData();

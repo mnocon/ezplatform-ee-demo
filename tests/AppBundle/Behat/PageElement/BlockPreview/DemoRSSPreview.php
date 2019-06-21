@@ -6,12 +6,12 @@
  */
 namespace Tests\AppBundle\Behat\PageElement\BlockPreview;
 
-use EzSystems\EzPlatformAdminUi\Behat\Helper\UtilityContext;
+use EzSystems\Behat\Browser\Context\BrowserContext;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageElement\BlockPreview\RSSPreview;
 
 class DemoRSSPreview extends RSSPreview
 {
-    public function __construct(UtilityContext $context)
+    public function __construct(BrowserContext $context)
     {
         parent::__construct($context);
         $this->fields['itemsSelector'] = sprintf('%s %s', $this->blockSelector, '.block-rss__items li');

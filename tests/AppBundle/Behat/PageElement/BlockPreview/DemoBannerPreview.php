@@ -6,7 +6,7 @@
  */
 namespace Tests\AppBundle\Behat\PageElement\BlockPreview;
 
-use EzSystems\EzPlatformAdminUi\Behat\Helper\UtilityContext;
+use EzSystems\Behat\Browser\Context\BrowserContext;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageElement\BlockPreview\BannerPreview;
 use PHPUnit\Framework\Assert;
 
@@ -14,7 +14,7 @@ class DemoBannerPreview extends BannerPreview
 {
     private $imageFile;
 
-    public function __construct(UtilityContext $context)
+    public function __construct(BrowserContext $context)
     {
         parent::__construct($context);
         $this->fields['imageSelector'] = sprintf('%s %s', $this->blockSelector, '.banner-full');
