@@ -83,6 +83,9 @@ ezpublish:
                     - 43 # Media
                     - 48 # Setup
                     - 249 # Forms
+            subtree_paths:
+                content: /1/2/
+                media: /1/43/
 
         site:
             languages: [eng-GB, fre-FR, ger-DE, nor-NO]
