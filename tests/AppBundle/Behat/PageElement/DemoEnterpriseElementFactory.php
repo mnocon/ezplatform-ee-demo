@@ -6,8 +6,8 @@
  */
 namespace Tests\AppBundle\Behat\PageElement;
 
-use EzSystems\EzPlatformAdminUi\Behat\Helper\UtilityContext;
-use EzSystems\EzPlatformAdminUi\Behat\PageElement\Element;
+use EzSystems\Behat\Browser\Context\BrowserContext;
+use EzSystems\Behat\Browser\Element\Element;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageElement\BlockPreview\BannerPreview;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageElement\BlockPreview\CollectionPreview;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageElement\BlockPreview\ContentListPreview;
@@ -47,13 +47,13 @@ use Tests\AppBundle\Behat\PageElement\Blocks\HeroBlock;
 class DemoEnterpriseElementFactory extends EnterpriseElementFactory
 {
     /**
-     * @param UtilityContext $context
+     * @param BrowserContext $context
      * @param string $elementName
      * @param null[]|string[] ...$parameters
      *
      * @return \EzSystems\EzPlatformAdminUi\Behat\PageElement\AdminList|\EzSystems\EzPlatformAdminUi\Behat\PageElement\AdminUpdateForm|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Breadcrumb|\EzSystems\EzPlatformAdminUi\Behat\PageElement\ContentField|\EzSystems\EzPlatformAdminUi\Behat\PageElement\ContentTypePicker|\EzSystems\EzPlatformAdminUi\Behat\PageElement\ContentUpdateForm|\EzSystems\EzPlatformAdminUi\Behat\PageElement\DateAndTimePopup|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Dialog|\EzSystems\EzPlatformAdminUi\Behat\PageElement\DraftConflictDialog|Element|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Fields\DefaultFieldElement|\EzSystems\EzPlatformAdminUi\Behat\PageElement\LanguagePicker|\EzSystems\EzPlatformAdminUi\Behat\PageElement\LeftMenu|\EzSystems\EzPlatformAdminUi\Behat\PageElement\NavLinkTabs|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Notification|\EzSystems\EzPlatformAdminUi\Behat\PageElement\PreviewNav|\EzSystems\EzPlatformAdminUi\Behat\PageElement\RightMenu|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Tables\ContentRelationTable|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Tables\DashboardTable|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Tables\DoubleHeaderTable|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Tables\LinkedListTable|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Tables\SimpleListTable|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Tables\SimpleTable|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Tables\SubItemsTable|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Tables\SystemInfoTable|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Tables\TrashTable|\EzSystems\EzPlatformAdminUi\Behat\PageElement\Tables\VerticalOrientedTable|\EzSystems\EzPlatformAdminUi\Behat\PageElement\UniversalDiscoveryWidget|\EzSystems\EzPlatformAdminUi\Behat\PageElement\UpperMenu|CollectionPreview|ContentSchedulerPreview|VideoPreview|Timeline
      */
-    public static function createElement(UtilityContext $context, string $elementName, ?string ...$parameters): Element
+    public static function createElement(BrowserContext $context, string $elementName, ?string ...$parameters): Element
     {
         switch ($elementName) {
             case ContentListBlock::ELEMENT_NAME:

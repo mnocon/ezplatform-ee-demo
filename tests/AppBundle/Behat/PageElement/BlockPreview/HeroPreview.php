@@ -5,7 +5,7 @@
  */
 namespace Tests\AppBundle\Behat\PageElement\BlockPreview;
 
-use EzSystems\EzPlatformAdminUi\Behat\Helper\UtilityContext;
+use EzSystems\Behat\Browser\Context\BrowserContext;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageElement\BlockPreview\BlockPreview;
 use PHPUnit\Framework\Assert;
 
@@ -15,7 +15,7 @@ class HeroPreview extends BlockPreview
 
     private $expectedTitle;
 
-    public function __construct(UtilityContext $context)
+    public function __construct(BrowserContext $context)
     {
         parent::__construct($context);
         $this->blockSelector = '.block-hero';

@@ -6,12 +6,12 @@
  */
 namespace Tests\AppBundle\Behat\PageElement\BlockPreview;
 
-use EzSystems\EzPlatformAdminUi\Behat\Helper\UtilityContext;
+use EzSystems\Behat\Browser\Context\BrowserContext;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageElement\BlockPreview\EmbedPreview;
 
 class DemoEmbedPreview extends EmbedPreview
 {
-    public function __construct(UtilityContext $context)
+    public function __construct(BrowserContext $context)
     {
         parent::__construct($context);
         $this->fields['headerSelector'] = sprintf('%s %s', $this->blockSelector, 'article.embed h5');

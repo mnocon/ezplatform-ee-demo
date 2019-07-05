@@ -5,8 +5,8 @@
  */
 namespace Tests\AppBundle\Behat\PageObject;
 
-use EzSystems\EzPlatformAdminUi\Behat\Helper\UtilityContext;
-use EzSystems\EzPlatformAdminUi\Behat\PageObject\Page;
+use EzSystems\Behat\Browser\Context\BrowserContext;
+use EzSystems\Behat\Browser\Page\Page;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageObject\EnterprisePageObjectFactory;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageObject\LandingPagePreview;
 use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageObject\PageBuilderEditor;
@@ -14,13 +14,13 @@ use EzSystems\EzPlatformPageBuilder\Tests\Behat\PageObject\PageBuilderEditor;
 class DemoEnterprisePageObjectFactory extends EnterprisePageObjectFactory
 {
     /**
-     * @param UtilityContext $context
+     * @param BrowserContext $context
      * @param string $pageName
      * @param null[]|string[] ...$parameters
      *
      * @return Page
      */
-    public static function createPage(UtilityContext $context, string $pageName, ?string ...$parameters): Page
+    public static function createPage(BrowserContext $context, string $pageName, ?string ...$parameters): Page
     {
         switch ($pageName) {
             case LandingPagePreview::PAGE_NAME:
