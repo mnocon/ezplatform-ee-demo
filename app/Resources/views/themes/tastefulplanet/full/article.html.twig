@@ -4,21 +4,23 @@
     {% set title = ez_content_name(content) ~ " - " ~ content.contentInfo.publishedDate|localizeddate('short', 'short', app.request.locale) %}
     {{ parent() }}
 
-    {% if ez_reco_enabled() and not location.isDraft %}
+    {% if ez_recommendation_enabled() and not location.isDraft %}
         {% include '@ezdesign/parts/recommendations_header.html.twig' %}
     {% endif %}
 {% endblock %}
 
 {% block ez_recommendations %}
-    {% if ez_reco_enabled() and not location.isDraft %}
-        {{ yc_show_recommendations(
-            contentId = content.id,
-            scenario = 'article',
-            limit = '3',
-            contentType = 'article',
-            template = 'recommendations',
-            fields = ['title', 'intro', 'image', 'uri']
-        ) }}
+    {% if ez_recommendation_enabled() and not location.isDraft %}
+        <div class="container">
+            {{ render_esi(controller('EzRecommendationClientBundle:Recommendation:showRecommendations', {
+                'contextItems': content.id,
+                'scenario': 'article',
+                'outputTypeId': 'article',
+                'limit': 3,
+                'template': 'EzRecommendationClientBundle::recommendations.html.twig',
+                'attributes': ['title', 'intro', 'image', 'uri']
+            })) }}
+        </div>
     {% endif %}
 {% endblock %}
 
