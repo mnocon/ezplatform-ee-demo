@@ -3,7 +3,82 @@ imports:
     - { resource: views.yml }
     - { resource: fields/ezrichtext/custom_tags.yml }
     - { resource: workflows.yml }
-    - { resource: default_parameters.yaml }
+
+parameters:
+    locale_fallback: en
+
+    # One of `legacy` (default) or `solr`
+    search_engine: '%env(SEARCH_ENGINE)%'
+
+    ## Session handler, by default set to file based (instead of ~) in order to be able to use %ezplatform.session.save_path%
+    ezplatform.session.handler_id: session.handler.native_file
+
+    # Session save path as used by symfony session handlers (eg. used for dsn with redis)
+    ezplatform.session.save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+
+    # Settings for Cache pool, to change add own cache service and optionally inject own arguments
+    # predefined pools: see symfony config and the optional pools in app/config/cache_pool/
+    # @todo fix this comment
+    cache_pool: '%env(CACHE_POOL)%'
+
+    # By default cache ttl is set to 24h, when using Varnish you can set a much higher value. High values depends on
+    # using EzSystemsPlatformHttpCacheBundle (default as of v1.12) which by design expires affected cache on changes
+    httpcache_default_ttl: '%env(HTTPCACHE_DEFAULT_TTL)%'
+
+    # Settings for HttpCache
+    purge_server: '%env(HTTPCACHE_PURGE_SERVER)%'
+
+    ## Purge type used by HttpCache system ("local", "varnish"/"http", and on ee also "fastly")
+    purge_type: local
+
+    # Varnish invalidation/purge token (for use on platform.sh, eZ Platform Cloud and other places you can't use IP for ACL)
+    # varnish_invalidate_token: '%env(HTTPCACHE_VARNISH_INVALIDATE_TOKEN)%' # @todo option is not available for some reason
+
+    ezpublish_rest.csrf_token_intention: authenticate
+
+    # Only relevant when using ezplatform-http-cache-fastly bundle provided with eZ Platform Enterprise
+    fastly_service_id: '%env(FASTLY_SERVICE_ID)%'
+    fastly_key: '%env(FASTLY_KEY)%'
+
+    # Varnish invalidation/purge token (for use on platform.sh, eZ Platform Cloud and other places you can't use IP for ACL)
+    varnish_invalidate_token: '%env(HTTPCACHE_VARNISH_INVALIDATE_TOKEN)%'
+
+    # Top menu parameters
+    app.top_menu.parent_location_id: 2
+    app.top_menu.included_content_type_identifier: ["folder", "article", "place_list", "product_list", "blog", "about", "landing_page"]
+
+    # Subscribe location id: 227 - demo, 228 - ee demo
+    ezsettings.default.app_subscribe_location_id: 232
+
+    # locationIds used for fetching items on home page
+    app.home.place_list_location_id: 223
+    app.home.tastes_location_id: 207
+
+    # form builder
+    ezsettings.default.form_builder.forms_location_id: 239
+
+    # Location Ids of allowed user groups for viewing Articles with premium content
+    # 12 - members, 13 administrator_users, 14 - editors
+    app.premium_content.allowed_user_groups.location_ids: [12, 13, 14]
+
+    app.migration_reference_file: '/src/App/MigrationVersions/References/references.yml'
+
+    app.migration.values_mapping:
+        app.home.place_list_location_id: 'ref_location_place_list__home__places_and_tastes__places'
+        app.home.tastes_location_id: 'ref_location_folder__home__places_and_tastes__tastes'
+        ezsettings.default.form_builder.forms_location_id: 'ref_location_folder__forms'
+        ezsettings.default.app_subscribe_location_id: 'ref_location_subscribe__home__subscribe'
+
+    # e-mail address used for form submission
+    app.contact_form.sender_email: no-reply@ez.no
+
+    # e-mail address used as a message recipient
+    app.contact_form.recipient_email: no-reply@ez.no
+
+    app.workflow.publish_on_last_stage: [article_workflow]
+
+    eztags.default.tag_view.pagelayout: '@@ezdesign/pagelayout.html.twig'
+    eztags.default.tag_view.template: '@@NetgenTags/tag/view.html.twig'
 
 ezpublish:
     # HttpCache settings, By default 'local' (Symfony HttpCache Proxy), by setting it to 'http' you can point it to Varnish
