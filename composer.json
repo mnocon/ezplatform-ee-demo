@@ -13,7 +13,8 @@
         }
     ],
     "repositories": [
-        { "type": "composer", "url": "https://updates.ez.no/ttl" }
+        { "type": "composer", "url": "https://updates.ez.no/ttl" },
+        { "type": "vcs", "url": "https://github.com/damianz5/ezmigrationbundle" }
     ],
     "require": {
         "php": "^7.3",
@@ -51,7 +52,7 @@
         "php-http/guzzle6-adapter": "^2.0",
         "sensio/framework-extra-bundle": "^5.1",
         "gregwar/captcha-bundle": "^2.0",
-        "kaliop/ezmigrationbundle": "^5.9",
+        "kaliop/ezmigrationbundle": "dev-ezplatform3.0-support-fixes",
         "sensiolabs/security-checker": "^5.0",
         "symfony/asset": "^4.3",
         "symfony/cache": "^4.3",
@@ -136,11 +137,11 @@
             "@auto-scripts"
         ],
         "ezplatform-install": [
-            "@php bin/console ezplatform:install ezplatform-ee-demo",
-            "@auto-scripts"
+            "@php bin/console ezplatform:install ezplatform-ee-demo"
         ]
     },
     "config": {
+        "process-timeout": 0,
         "preferred-install": {
             "ezsystems/*": "dist"
         },
