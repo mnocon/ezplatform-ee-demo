@@ -1,6 +1,4 @@
 {
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "name": "ezsystems/ezplatform-ee-demo",
     "description": "eZ Platform Enterprise Edition Demo distribution",
     "homepage": "https://github.com/ezsystems/ezplatform-ee-demo",
