@@ -1,0 +1,26 @@
+ezpublish:
+    system:
+        admin_group:
+            fieldtypes:
+                ezrichtext:
+                    custom_tags: [factbox, call_to_action]
+
+ezrichtext:
+    # Define Custom Tags
+    custom_tags:
+        factbox:
+            template: '@ezdesign/fields/ezrichtext/custom_tags/factbox.html.twig'
+            icon: '/bundles/ezplatformadminui/img/ez-icons.svg#about'
+            attributes:
+                title:
+                    type: 'string'
+
+        call_to_action:
+            template: '@ezdesign/fields/ezrichtext/custom_tags/call_to_action.html.twig'
+            icon: '/bundles/ezplatformadminui/img/ez-icons.svg#button'
+            attributes:
+                style:
+                    type: 'choice'
+                    default_value: 'primary'
+                    required: true
+                    choices: ['primary', 'secondary']

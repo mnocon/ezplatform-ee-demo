@@ -9,11 +9,9 @@ declare(strict_types=1);
 namespace App\Event\Subscriber;
 
 use eZ\Publish\API\Repository\ContentService;
+use eZ\Publish\API\Repository\Events\Content\PublishVersionEvent;
 use eZ\Publish\API\Repository\PermissionResolver;
 use eZ\Publish\API\Repository\Repository;
-use eZ\Publish\Core\MVC\Symfony\Event\SignalEvent;
-use eZ\Publish\Core\MVC\Symfony\MVCEvents;
-use eZ\Publish\Core\SignalSlot\Signal\ContentService\PublishVersionSignal;
 use EzSystems\EzPlatformWorkflow\Exception\NotFoundException;
 use EzSystems\EzPlatformWorkflow\Registry\WorkflowDefinitionMetadataRegistry;
 use EzSystems\EzPlatformWorkflow\Registry\WorkflowRegistryInterface;
@@ -72,44 +70,26 @@ class EndWorkflowSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            MVCEvents::API_SIGNAL => ['onPublishVersionSignal', -50],
+            PublishVersionEvent::class => ['onPublishVersion', -50],
         ];
     }
 
     /**
-     * Automatically starts supported workflows after updating content.
+     * Automatically starts supported workflows after publishing content.
      *
-     * @param \eZ\Publish\Core\MVC\Symfony\Event\SignalEvent $event
-     *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @param \eZ\Publish\API\Repository\Events\Content\PublishVersionEvent $event
      */
-    public function onPublishVersionSignal(SignalEvent $event): void
+    public function onPublishVersion(PublishVersionEvent $event): void
     {
-        $signal = $event->getSignal();
-
-        if (!$signal instanceof PublishVersionSignal) {
-            return;
-        }
-
-        $this->doEndWorkflows((int)$signal->contentId, (int)$signal->versionNo);
-    }
-
-    /**
-     * @param int $contentId
-     * @param int $versionNo
-     *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
-     */
-    private function doEndWorkflows(int $contentId, int $versionNo): void
-    {
-        $content = $this->contentService->loadContent($contentId, [], $versionNo);
+        $content = $event->getContent();
         $supportedWorkflows = $this->workflowRegistry->getSupportedWorkflows($content);
 
         foreach ($supportedWorkflows as $workflow) {
             try {
-                $workflowMetadata = $this->workflowService->loadWorkflowMetadataForContent($content, $workflow->getName());
+                $workflowMetadata = $this->workflowService->loadWorkflowMetadataForContent(
+                    $content,
+                    $workflow->getName()
+                );
             } catch (NotFoundException $e) {
                 continue;
             }
@@ -130,12 +110,15 @@ class EndWorkflowSubscriber implements EventSubscriberInterface
     private function applyTransitions(array $transitionsToMake, WorkflowMetadata $workflowMetadata): void
     {
         foreach ($transitionsToMake as $transitionToMake) {
-            $this->permissionResolver->sudo(function () use ($workflowMetadata, $transitionToMake) {
-                if ($this->workflowService->can($workflowMetadata, $transitionToMake)) {
-                    $this->workflowService->apply($workflowMetadata, $transitionToMake, '');
+            $this->permissionResolver->sudo(
+                function () use ($workflowMetadata, $transitionToMake) {
+                    if ($this->workflowService->can($workflowMetadata, $transitionToMake)) {
+                        $this->workflowService->apply($workflowMetadata, $transitionToMake, '');
 
-                }
-            }, $this->repository);
+                    }
+                },
+                $this->repository
+            );
         }
     }
 
