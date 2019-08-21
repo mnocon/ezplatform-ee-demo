@@ -52,6 +52,12 @@
         </testsuite>
     </testsuites>
 
+    <filter>
+        <whitelist>
+            <directory>src</directory>
+        </whitelist>
+    </filter>
+
     <extensions>
         <extension class="App\PHPUnit\BypassFinalHook"/>
     </extensions>
