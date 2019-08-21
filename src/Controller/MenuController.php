@@ -1,8 +1,11 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
@@ -10,7 +13,7 @@ use Symfony\Component\Templating\EngineInterface;
 use eZ\Publish\API\Repository\SearchService;
 use App\QueryType\MenuQueryType;
 
-class MenuController
+final class MenuController
 {
     /** @var \Symfony\Bundle\TwigBundle\TwigEngine */
     protected $templating;
@@ -55,8 +58,11 @@ class MenuController
      * @param string|null $pathString
      *
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @throws \Twig\Error\Error
+     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
      */
-    public function getChildNodesAction($template, $pathString = null)
+    public function getChildNodesAction($template, $pathString = null): Response
     {
         $query = $this->menuQueryType->getQuery([
             'parent_location_id' => $this->topMenuParentLocationId,

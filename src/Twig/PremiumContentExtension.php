@@ -1,8 +1,11 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Twig;
 
 use App\Helper\UserGroupHelper;
@@ -14,7 +17,7 @@ use Twig\TwigFunction;
 /**
  * Twig helper for premium content.
  */
-class PremiumContentExtension extends AbstractExtension
+final class PremiumContentExtension extends AbstractExtension
 {
     /** @var \App\PremiumContent\HtmlRenderer */
     private $htmlRenderer;
@@ -31,7 +34,7 @@ class PremiumContentExtension extends AbstractExtension
     /**
      * @param \App\PremiumContent\HtmlRenderer $htmlRenderer
      * @param \App\Helper\UserGroupHelper $userGroups
-     * @param array $allowedUserGroupsLocationIds
+     * @param int[] $allowedUserGroupsLocationIds
      */
     public function __construct(
         HtmlRenderer $htmlRenderer,
@@ -90,6 +93,8 @@ class PremiumContentExtension extends AbstractExtension
      * Checks if user has access to premium content.
      *
      * @return bool
+     *
+     * @throws \Exception
      */
     public function hasAccessToPremiumContent(): bool
     {

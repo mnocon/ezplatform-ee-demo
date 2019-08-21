@@ -1,8 +1,11 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use eZ\Publish\API\Repository\SearchService;
@@ -20,7 +23,7 @@ use Pagerfanta\Pagerfanta;
  * A content view controller that runs queries based on the matched view configuration
  * and support pagination using Pagerfanta as a pagination provider.
  */
-class ProductListController
+final class ProductListController
 {
     /** @var \eZ\Publish\API\Repository\SearchService */
     private $searchService;

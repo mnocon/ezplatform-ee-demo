@@ -1,13 +1,16 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Model;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class Contact
+final class Contact
 {
     /**
      * Sender's name.
@@ -15,7 +18,7 @@ class Contact
      * @var string
      * @Assert\NotBlank()
      */
-    protected $name;
+    private $name;
 
     /**
      * Sender's e-mail address.
@@ -23,7 +26,7 @@ class Contact
      * @var string
      * @Assert\Email()
      */
-    protected $email;
+    private $email;
 
     /**
      * Sender's message.
@@ -31,20 +34,20 @@ class Contact
      * @var string
      * @Assert\NotBlank()
      */
-    protected $message;
+    private $message;
 
     /**
      * @param string $name
      */
-    public function setName($name)
+    public function setName($name): void
     {
         $this->name = $name;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -52,23 +55,23 @@ class Contact
     /**
      * @param string $email
      */
-    public function setEmail($email)
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getMessage()
+    public function getMessage(): ?string
     {
         return $this->message;
     }
@@ -76,7 +79,7 @@ class Contact
     /**
      * @param string $message
      */
-    public function setMessage($message)
+    public function setMessage(string $message): void
     {
         $this->message = $message;
     }
@@ -84,7 +87,7 @@ class Contact
     /**
      * @return string
      */
-    public function getFrom()
+    public function getFrom(): string
     {
         return sprintf('%s <%s>', $this->getName(), $this->getEmail());
     }

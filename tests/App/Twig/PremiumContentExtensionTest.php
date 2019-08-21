@@ -2,8 +2,8 @@
 
 namespace Tests\App\Twig;
 
-use App\PremiumContent\HtmlRenderer;
 use App\Helper\UserGroupHelper;
+use App\PremiumContent\HtmlRenderer;
 use App\Twig\PremiumContentExtension;
 use PHPUnit\Framework\TestCase;
 

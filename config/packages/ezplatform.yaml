@@ -1,8 +1,3 @@
-imports:
-    - { resource: image_variations.yml }
-    - { resource: views.yml }
-    - { resource: workflows.yml }
-
 parameters:
     locale_fallback: en
 
@@ -60,7 +55,7 @@ parameters:
     # 12 - members, 13 administrator_users, 14 - editors
     app.premium_content.allowed_user_groups.location_ids: [12, 13, 14]
 
-    app.migration_reference_file: '/src/App/MigrationVersions/References/references.yml'
+    app.migration_reference_file: '/src/MigrationVersions/References/references.yml'
 
     app.migration.values_mapping:
         app.home.place_list_location_id: 'ref_location_place_list__home__places_and_tastes__places'
@@ -169,6 +164,14 @@ ezpublish:
     url_alias:
         slug_converter:
             transformation: 'urlalias_lowercase'
+ezdesign:
+    design_list:
+        main: [tastefulplanet]
+        admin: [admin, tastefulplanet]
+
+ez_platform_standard_design:
+    # makes Kernel default templates (in EzPublishCoreBundle/Resources/views) part of standard Design
+    override_kernel_templates: false
 
 framework:
     translator: { fallback: '%locale_fallback%' }
@@ -194,14 +197,6 @@ framework:
                 default_lifetime: 3600
                 public: true
                 tags: true
-ezdesign:
-    design_list:
-        main: [tastefulplanet]
-        admin: [admin, tastefulplanet]
-
-ez_platform_standard_design:
-    # makes Kernel default templates (in EzPublishCoreBundle/Resources/views) part of standard Design
-    override_kernel_templates: false
 
 #nova_ezseo:
 #    system:

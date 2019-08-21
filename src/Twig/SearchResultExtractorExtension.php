@@ -1,8 +1,11 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Twig;
 
 use eZ\Publish\API\Repository\Values\Content\Search\SearchHit;
@@ -13,12 +16,10 @@ use Twig\TwigFunction;
 /**
  * Twig helper for extract SearchResult object and returns array
  */
-class SearchResultExtractorExtension extends AbstractExtension
+final class SearchResultExtractorExtension extends AbstractExtension
 {
     /**
-     * Returns the name of the extension.
-     *
-     * @return string the extension name
+     * {@inheritdoc}
      */
     public function getName(): string
     {
@@ -38,7 +39,8 @@ class SearchResultExtractorExtension extends AbstractExtension
     /**
      * Returns extracted SearchResult object as array
      *
-     * @param SearchResult $searchResult
+     * @param \eZ\Publish\API\Repository\Values\Content\Search\SearchResult $searchResult
+     *
      * @return array
      */
     public function extractSearchResult(SearchResult $searchResult): array

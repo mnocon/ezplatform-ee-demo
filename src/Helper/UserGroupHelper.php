@@ -1,15 +1,18 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Helper;
 
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use eZ\Publish\API\Repository\Repository as RepositoryInterface;
 use eZ\Publish\API\Repository\Values\User\User as ApiUser;
 
-class UserGroupHelper
+final class UserGroupHelper
 {
     /** @var \eZ\Publish\API\Repository\Repository */
     private $repository;
@@ -35,6 +38,8 @@ class UserGroupHelper
      * @param array $userGroupsLocationIds
      *
      * @return bool
+     *
+     * @throws \Exception
      */
     public function isCurrentUserInOneOfTheGroups(array $userGroupsLocationIds): bool
     {
@@ -45,6 +50,8 @@ class UserGroupHelper
      * Returns User Groups Location Ids based on current user..
      *
      * @return int[]
+     *
+     * @throws \Exception
      */
     private function getCurrentUserGroupsIds(): array
     {
@@ -67,6 +74,8 @@ class UserGroupHelper
      * @param \eZ\Publish\API\Repository\Values\User\User $apiUser
      *
      * @return \eZ\Publish\API\Repository\Values\User\UserGroup[]
+     *
+     * @throws \Exception
      */
     private function loadUserGroups(ApiUser $apiUser): array
     {

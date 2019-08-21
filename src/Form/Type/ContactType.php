@@ -1,10 +1,14 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Form\Type;
 
+use App\Model\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -12,9 +16,12 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ContactType extends AbstractType
+final class ContactType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    /**
+     * {@inheritdoc}
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->setMethod('post')
@@ -23,13 +30,19 @@ class ContactType extends AbstractType
             ->add('message', TextareaType::class);
     }
 
-    public function getName()
+    /**
+     * @return string
+     */
+    public function getName(): string
     {
         return 'app_contact';
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    /**
+     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
+     */
+    public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(['data_class' => 'App\Model\Contact']);
+        $resolver->setDefaults(['data_class' => Contact::class]);
     }
 }

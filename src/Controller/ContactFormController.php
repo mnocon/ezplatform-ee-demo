@@ -1,8 +1,11 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use Symfony\Component\Form\FormFactoryInterface;
@@ -15,35 +18,35 @@ use App\Mail\Sender;
 use Symfony\Component\Routing\RouterInterface;
 use Twig\Environment;
 
-class ContactFormController
+final class ContactFormController
 {
     /** @var \Symfony\Component\Form\FormFactoryInterface */
-    protected $formFactory;
+    private $formFactory;
 
     /** @var \App\Mail\Sender */
-    protected $sender;
+    private $sender;
 
-    /** var \Symfony\Bundle\TwigBundle\TwigEngine */
-    protected $templating;
+    /** @var \Twig\Environment */
+    private $twigEnvironment;
 
     /** @var \Symfony\Component\Routing\RouterInterface */
-    protected $router;
+    private $router;
 
     /**
      * @param \Symfony\Component\Form\FormFactoryInterface $formFactory
      * @param \App\Mail\Sender $sender
-     * @param \Symfony\Component\Templating\EngineInterface $templating
+     * @param \Twig\Environment $twigEnvironment
      * @param \Symfony\Component\Routing\RouterInterface $router
      */
     public function __construct(
         FormFactoryInterface $formFactory,
         Sender $sender,
-        Environment $templating,
+        Environment $twigEnvironment,
         RouterInterface $router
     ) {
         $this->formFactory = $formFactory;
         $this->sender = $sender;
-        $this->templating = $templating;
+        $this->twigEnvironment = $twigEnvironment;
         $this->router = $router;
     }
 
@@ -91,9 +94,13 @@ class ContactFormController
      * @param string $template
      *
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
      */
-    public function submittedAction($template)
+    public function submittedAction(string $template): Response
     {
-        return $this->templating->renderResponse($template, [], new Response());
+        return new Response($this->twigEnvironment->render($template));
     }
 }

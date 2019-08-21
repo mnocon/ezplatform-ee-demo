@@ -1,10 +1,14 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Form\Type;
 
+use App\Entity\ProductSearch;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -13,7 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ProductSearchType extends AbstractType
+final class ProductSearchType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -85,6 +89,6 @@ class ProductSearchType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array('data_class' => 'App\Entity\ProductSearch'));
+        $resolver->setDefaults(array('data_class' => ProductSearch::class));
     }
 }

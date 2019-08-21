@@ -6,14 +6,6 @@ services:
 
     App\Twig\ContentInfoByLocationIdExtension: ~
 
-    App\Twig\YoutubeIdExtractorExtension:
-        tags:
-            - { name: twig.extension }
-
-    App\Twig\RecommendationsExtension:
-        tags:
-            - { name: twig.extension }
-
     App\Twig\SearchResultExtractorExtension:
         tags:
             - { name: twig.extension }
@@ -21,9 +13,5 @@ services:
     App\Twig\PremiumContentExtension:
         arguments:
             $allowedUserGroupsLocationIds: '%app.premium_content.allowed_user_groups.location_ids%'
-        tags:
-            - { name: twig.extension }
-
-    App\Twig\ContentDescriptionExtension:
         tags:
             - { name: twig.extension }

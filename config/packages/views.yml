@@ -79,7 +79,7 @@ ezpublish:
                             Identifier\ContentType: [blog_post]
 
                     subscribe:
-                        controller: App\Controller\ContactFormController::showContactFormAction
+                        controller: 'App\Controller\ContactFormController::showContactFormAction'
                         template: "@ezdesign/full/subscribe.html.twig"
                         match:
                             Identifier\ContentType: [subscribe]
@@ -95,7 +95,7 @@ ezpublish:
                             Identifier\ContentType: [product]
 
                     product_list:
-                        controller: App\Controller\ProductListController::contentQueryPaginationAction
+                        controller: 'App\Controller\ProductListController::contentQueryPaginationAction'
                         params:
                             page_limit: 12
                             view_type: card

@@ -78,7 +78,7 @@ mounts:
         source: local
         source_path: sessions
 # For Kaliop Migrations on your setup and not able to get it to write to "var" dir.
-    'src/AppBundle/MigrationVersions/References':
+    'src/App/MigrationVersions/References':
         source: local
         source_path: MigrationVersionsReferences
 # Uncomment if you want to use DFS clustering, WARNING: Needs to be shared, contact Platform.sh support to set this up

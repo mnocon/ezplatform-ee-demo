@@ -1,8 +1,11 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Twig;
 
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
@@ -14,7 +17,7 @@ use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
 /**
  * Twig helper for fetching ContentInfo Based on Location Id.
  */
-class ContentInfoByLocationIdExtension extends AbstractExtension
+final class ContentInfoByLocationIdExtension extends AbstractExtension
 {
     /** var \eZ\Publish\API\Repository\LocationService */
     private $locationService;
@@ -45,7 +48,9 @@ class ContentInfoByLocationIdExtension extends AbstractExtension
     }
 
     /**
-     * @inheritDoc
+     * Returns a list of functions to add to the existing list.
+     *
+     * @return array
      */
     public function getFunctions(): array
     {
@@ -58,14 +63,14 @@ class ContentInfoByLocationIdExtension extends AbstractExtension
     /**
      * Return ContentInfo based on Location Id
      *
-     * @param $locationId int
+     * @param $locationId
      *
      * @return \eZ\Publish\API\Repository\Values\Content\ContentInfo
-
+     *
      * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
      * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
      */
-    public function contentInfoByLocationId(int $locationId): ContentInfo
+    public function contentInfoByLocationId($locationId): ContentInfo
     {
         return $this->locationService->loadLocation($locationId)->getContentInfo();
     }
@@ -73,14 +78,14 @@ class ContentInfoByLocationIdExtension extends AbstractExtension
     /**
      * Return ContentInfo based on Content Id
      *
-     * @param $contentId int
+     * @param $contentId
      *
      * @return \eZ\Publish\API\Repository\Values\Content\ContentInfo
      *
      * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
      * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
      */
-    public function contentInfoByContentId(int $contentId): ContentInfo
+    public function contentInfoByContentId($contentId): ContentInfo
     {
         return $this->contentService->loadContent($contentId)->getVersionInfo()->getContentInfo();
     }

@@ -20,10 +20,8 @@ services:
             - { name: ez_migration_bundle.complex_field, fieldtype: ezform, priority: 0 }
 
     App\Migration\FieldHandler\EzImageAsset:
-        autowire: true
-        autoconfigure: false
-        calls:
-            - ['setReferenceResolver', ['@ez_migration_bundle.reference_resolver.customreference']]
+        arguments:
+            - '@ez_migration_bundle.reference_resolver.customreference'
         tags:
             - { name: ez_migration_bundle.complex_field, fieldtype: ezimageasset, priority: 0 }
 

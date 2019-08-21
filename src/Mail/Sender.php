@@ -1,8 +1,11 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Mail;
 
 use App\Model\Contact;
@@ -11,26 +14,26 @@ use Swift_Message;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Twig\Environment as Templating;
 
-class Sender
+final class Sender
 {
     /** @var \Swift_Mailer */
-    protected $mailer;
+    private $mailer;
 
-    /** @var \Symfony\Component\Translation\TranslatorInterface|TranslatorInterface */
-    protected $translator;
+    /** @var \Symfony\Component\Translation\TranslatorInterface */
+    private $translator;
 
     /** @var \Symfony\Bundle\TwigBundle\TwigEngine */
-    protected $templating;
+    private $templating;
 
     /** @var string */
-    protected $senderEmail;
+    private $senderEmail;
 
     /** @var string */
-    protected $recipientEmail;
+    private $recipientEmail;
 
     /**
      * @param \Swift_Mailer $mailer
-     * @param \Symfony\Component\Translation\TranslatorInterface $translator
+     * @param \Symfony\Contracts\Translation\TranslatorInterface $translator
      * @param \Twig\Environment $templating
      * @param string $senderEmail
      * @param string $recipientEmail
@@ -39,8 +42,8 @@ class Sender
         Swift_Mailer $mailer,
         TranslatorInterface $translator,
         Templating $templating,
-        $senderEmail,
-        $recipientEmail
+        string $senderEmail,
+        string $recipientEmail
     ) {
         $this->mailer = $mailer;
         $this->translator = $translator;
@@ -60,7 +63,8 @@ class Sender
     public function send(Contact $contact): void
     {
         $title = $this->translator->trans('You have a new message from %from%', ['%from%' => $contact->getFrom()]);
-        $message = Swift_Message::newInstance($title, $contact->getMessage())
+        $message = new Swift_Message($title, $contact->getMessage());
+        $message
             ->setFrom($this->senderEmail)
             ->setTo($this->recipientEmail)
             ->setReplyTo($this->recipientEmail)
