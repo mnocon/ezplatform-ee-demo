@@ -1,8 +1,11 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace App\Installer;
 
 use EzSystems\PlatformInstallerBundle\Installer\CoreInstaller;
@@ -12,7 +15,11 @@ class PlatformEEDemoInstaller extends CoreInstaller
 {
     use InstallerCommandExecuteTrait;
 
-    public function importData()
+    /**
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     */
+    public function importData(): void
     {
         parent::importData();
 
@@ -48,7 +55,7 @@ class PlatformEEDemoInstaller extends CoreInstaller
         }
     }
 
-    public function importBinaries()
+    public function importBinaries(): void
     {
         $this->output->writeln('Copying storage directory contents...');
         $fs = new Filesystem();
