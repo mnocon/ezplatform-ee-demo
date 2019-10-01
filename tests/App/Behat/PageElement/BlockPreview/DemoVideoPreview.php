@@ -27,6 +27,6 @@ class DemoVideoPreview extends VideoPreview
 
     public function verifyVisibility(): void
     {
-        Assert::assertEquals($this->imageFilename, $this->context->findElement($this->fields['imgSelector'], self::TIMEOUT, $this->baseElement)->getAttribute('src'));
+        Assert::assertStringEndsWith($this->imageFilename, $this->context->findElement($this->fields['imgSelector'], self::TIMEOUT, $this->baseElement)->getAttribute('src'));
     }
 }
