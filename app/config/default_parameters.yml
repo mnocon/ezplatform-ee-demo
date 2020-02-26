@@ -60,6 +60,11 @@ parameters:
     # Session save path as used by symfony session handlers (eg. used for dsn with redis)
     ezplatform.session.save_path: '%env(SESSION_SAVE_PATH)%'
 
+    # Recommendation Bundle params
+    ez_recommendation.default.yoochoose.customer_id: '%env(RECOMMENDATIONS_CUSTOMER_ID)%'
+    ez_recommendation.default.yoochoose.license_key: '%env(RECOMMENDATIONS_LICENSE_KEY)%'
+    ez_recommendation.default.server_uri: '%env(PUBLIC_SERVER_URI)%'
+
     # Fallback values for when environment variables do not exist
 
     env(MAILER_HOST):       127.0.0.1
@@ -89,9 +94,9 @@ parameters:
 
     env(SESSION_SAVE_PATH): '%kernel.project_dir%/var/sessions/%kernel.environment%'
 
-    env(RECOMMENDATION_CUSTOMER_ID):   ~
-    env(RECOMMENDATION_LICENSE_KEY):   ~
-    env(RECOMMENDATION_HOST_URI):      ~
+    env(RECOMMENDATIONS_CUSTOMER_ID):   ~
+    env(RECOMMENDATIONS_LICENSE_KEY):   ~
+    env(PUBLIC_SERVER_URI):             ~
 
     # set here for BC reasons, change them in parameters.yml
     env(DATABASE_CHARSET): utf8mb4
@@ -124,6 +129,9 @@ parameters:
     # Varnish invalidation/purge token (for use on platform.sh, eZ Platform Cloud and other places you can't use IP for ACL)
     varnish_invalidate_token: '%env(HTTPCACHE_VARNISH_INVALIDATE_TOKEN)%'
     env(HTTPCACHE_VARNISH_INVALIDATE_TOKEN): ~
+
+    # LiipImagineBundle - imagine driver
+    liip_imagine_driver: 'gd'
 
     # Top menu parameters
     app.top_menu.parent_location_id: 2
