@@ -9,9 +9,7 @@ use App\PremiumContent\HtmlRenderer;
 use App\User\UserGroups;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
-use Twig_Extension;
-use Twig_SimpleFilter;
-use Twig_SimpleFunction;
+use Twig\TwigFilter;
 
 /**
  * Twig helper for premium content.
@@ -75,7 +73,7 @@ class PremiumContentExtension extends AbstractExtension
     public function getFilters()
     {
         return [
-            new TwigFunction('previewPremiumContent', [$this, 'previewPremiumContent'], ['is_safe' => ['html']]),
+            new TwigFilter('previewPremiumContent', [$this, 'previewPremiumContent'], ['is_safe' => ['html']]),
         ];
     }
 
