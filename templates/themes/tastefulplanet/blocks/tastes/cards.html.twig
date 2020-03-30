@@ -11,7 +11,7 @@
             </svg>
         </div>
         <h3 class="block-contentlist__title">{{ ez_content_name(app_content_info_by_content_id(contentId)) }}</h3>
-        <a class="block-contentlist__link block-contentlist__link--more" href="{{ ez_path('ez_urlalias', {contentId: contentId}) }}">
+        <a class="block-contentlist__link block-contentlist__link--more" href="{{ path('ez_urlalias', {contentId: contentId}) }}">
             {{ 'More'|trans }}
         </a>
     </div>
