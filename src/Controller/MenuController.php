@@ -61,20 +61,16 @@ class MenuController extends AbstractController
 
         $pathArray = $pathString ? explode("/", $pathString) : [];
 
-        $content = '';
         $content = $this->renderView(
             $template, [
                 'menuItems' => $menuItems,
-                'pathArray' => $pathString,
+                'pathArray' => $pathArray,
             ]
         );
 
-//        $response = new Response();
-//        $response->setVary('X-User-Hash');
-//
-//        return $response;
+        $response = new Response($content);
+        $response->setVary('X-User-Hash');
 
-        return new Response(sprintf('<div>%s, %s, %s</div>', $content, $template, $pathString), 200);
-
+        return $response;
     }
 }
