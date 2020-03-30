@@ -1,4 +1,4 @@
-ezpublish:
+ezplatform:
     system:
         default:
             image_variations:

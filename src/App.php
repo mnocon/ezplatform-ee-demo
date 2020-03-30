@@ -3,14 +3,14 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace AppBundle;
+namespace App;
 
 use AppBundle\DependencyInjection\Compiler\MigrationParameterPass;
 use AppBundle\Security\PersonalizationPolicyProvider;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class App extends Bundle
 {
     public function build(ContainerBuilder $container)
     {
