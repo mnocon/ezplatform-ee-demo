@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace AppBundle\Helper;
+namespace App\Helper;
 
 use eZ\Publish\API\Repository\SearchService as SearchServiceInterface;
 use eZ\Publish\API\Repository\Values\Content\Query;

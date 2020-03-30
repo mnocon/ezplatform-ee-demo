@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace AppBundle\Event\Workflow;
+namespace App\Event\Workflow;
 
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\PermissionResolver;

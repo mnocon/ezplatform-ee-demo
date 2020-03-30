@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace AppBundle\Event;
+namespace App\Event;
 
 use EzSystems\EzPlatformPageFieldType\FieldType\Page\Block\Renderer\BlockRenderEvents;
 use EzSystems\EzPlatformPageFieldType\FieldType\Page\Block\Renderer\Event\PreRenderEvent;

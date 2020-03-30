@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace AppBundle\Event\Listener;
+namespace App\Event\Listener;
 
-use AppBundle\User\UserGroups;
+use App\User\UserGroups;
 use eZ\Publish\Core\MVC\Symfony\Security\Authorization\Attribute;
 use EzSystems\EzPlatformAdminUi\Menu\Event\ConfigureMenuEvent;
 use EzSystems\EzRecommendationClient\Config\CredentialsCheckerInterface;
@@ -29,7 +29,7 @@ class RenderMenuListener
     /** @var \EzSystems\EzRecommendationClient\Config\CredentialsCheckerInterface */
     private $credentialsChecker;
 
-    /** @var \AppBundle\User\UserGroups */
+    /** @var \App\User\UserGroups */
     private $userGroups;
 
     /** @var \Symfony\Component\Translation\TranslatorInterface */
@@ -38,7 +38,7 @@ class RenderMenuListener
     /**
      * @param \Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface $authorizationChecker
      * @param \EzSystems\EzRecommendationClient\Config\CredentialsCheckerInterface $credentialsChecker
-     * @param \AppBundle\User\UserGroups $userGroups
+     * @param \App\User\UserGroups $userGroups
      * @param \Symfony\Component\Translation\TranslatorInterface $translator
      */
     public function __construct(

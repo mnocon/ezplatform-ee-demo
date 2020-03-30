@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace AppBundle\Value;
+namespace App\Value;
 
 class PageBuilderBlockValueObject
 {

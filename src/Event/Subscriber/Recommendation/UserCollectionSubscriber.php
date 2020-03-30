@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace AppBundle\Event\Subscriber\Recommendation;
+namespace App\Event\Subscriber\Recommendation;
 
 use eZ\Publish\API\Repository\Repository as RepositoryInterface;
 use eZ\Publish\API\Repository\UserService;

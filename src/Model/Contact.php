@@ -3,7 +3,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace AppBundle\Model;
+namespace App\Model;
 
 use Symfony\Component\Validator\Constraints as Assert;
 

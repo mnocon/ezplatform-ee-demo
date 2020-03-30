@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\QueryType;
+namespace App\QueryType;
 
 use eZ\Publish\Core\QueryType\QueryType;
 use eZ\Publish\API\Repository\Values\Content\Query;

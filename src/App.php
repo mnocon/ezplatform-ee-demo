@@ -5,8 +5,8 @@
  */
 namespace App;
 
-use AppBundle\DependencyInjection\Compiler\MigrationParameterPass;
-use AppBundle\Security\PersonalizationPolicyProvider;
+use App\DependencyInjection\Compiler\MigrationParameterPass;
+use App\Security\PersonalizationPolicyProvider;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

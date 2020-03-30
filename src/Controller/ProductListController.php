@@ -3,14 +3,14 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace AppBundle\Controller;
+namespace App\Controller;
 
 use eZ\Publish\API\Repository\SearchService;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
 use eZ\Publish\Core\MVC\Symfony\View\ContentView;
 use eZ\Publish\Core\QueryType\ContentViewQueryTypeMapper;
 use eZ\Publish\Core\Pagination\Pagerfanta\ContentSearchAdapter;
-use AppBundle\Form\Type\ProductSearchType;
+use App\Form\Type\ProductSearchType;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;

@@ -3,12 +3,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace AppBundle\Controller;
+namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Templating\EngineInterface;
 use eZ\Publish\API\Repository\SearchService;
-use AppBundle\QueryType\MenuQueryType;
+use App\QueryType\MenuQueryType;
 
 class MenuController
 {
@@ -18,7 +18,7 @@ class MenuController
     /** @var \eZ\Publish\API\Repository\SearchService */
     protected $searchService;
 
-    /** @var \AppBundle\QueryType\MenuQueryType */
+    /** @var \App\QueryType\MenuQueryType */
     protected $menuQueryType;
 
     /** @var int */
@@ -30,7 +30,7 @@ class MenuController
     /**
      * @param \Symfony\Component\Templating\EngineInterface $templating
      * @param \eZ\Publish\API\Repository\SearchService $searchService
-     * @param \AppBundle\QueryType\MenuQueryType $menuQueryType
+     * @param \App\QueryType\MenuQueryType $menuQueryType
      * @param int $topMenuParentLocationId
      * @param array $topMenuContentTypeIdentifier
      */

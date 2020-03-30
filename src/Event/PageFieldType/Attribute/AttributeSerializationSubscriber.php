@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace AppBundle\Event\PageFieldType\Attribute;
+namespace App\Event\PageFieldType\Attribute;
 
 use EzSystems\EzPlatformPageFieldType\Event\AttributeSerializationEvent;
 use EzSystems\EzPlatformPageFieldType\Event\PageEvents;

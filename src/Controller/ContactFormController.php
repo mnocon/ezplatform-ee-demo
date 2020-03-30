@@ -3,7 +3,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace AppBundle\Controller;
+namespace App\Controller;
 
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -12,15 +12,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\TwigBundle\TwigEngine as Templating;
 use Symfony\Component\Routing\Router;
 use eZ\Publish\Core\MVC\Symfony\View\View;
-use AppBundle\Form\Type\ContactType;
-use AppBundle\Mail\Sender;
+use App\Form\Type\ContactType;
+use App\Mail\Sender;
 
 class ContactFormController
 {
     /** @var \Symfony\Component\Form\FormFactory */
     protected $formFactory;
 
-    /** @var \AppBundle\Mail\Sender */
+    /** @var \App\Mail\Sender */
     protected $sender;
 
     /** var \Symfony\Bundle\TwigBundle\TwigEngine */
@@ -31,7 +31,7 @@ class ContactFormController
 
     /**
      * @param \Symfony\Component\Form\FormFactory $formFactory
-     * @param \AppBundle\Mail\Sender $sender
+     * @param \App\Mail\Sender $sender
      * @param \Symfony\Bundle\TwigBundle\TwigEngine $templating
      * @param \Symfony\Component\Routing\Router $router
      */

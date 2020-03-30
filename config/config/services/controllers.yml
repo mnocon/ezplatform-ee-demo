@@ -10,7 +10,7 @@ services:
         public: false
 
     app.controller.menu:
-        class: AppBundle\Controller\MenuController
+        class: App\Controller\MenuController
         public: true
         arguments:
             - '@templating'
@@ -20,7 +20,7 @@ services:
             - '%app.top_menu.includedContentTypeIdentifier%'
 
     app.controller.contactform:
-        class: AppBundle\Controller\ContactFormController
+        class: App\Controller\ContactFormController
         public: true
         arguments:
             - '@form.factory'
@@ -29,7 +29,7 @@ services:
             - '@hautelook.router.template'
 
     app.controller.product_list_controller:
-        class: AppBundle\Controller\ProductListController
+        class: App\Controller\ProductListController
         public: true
         arguments:
             - '@ezpublish.query_type_content_view_mapper'

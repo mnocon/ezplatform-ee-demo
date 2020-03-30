@@ -8,7 +8,7 @@
  */
 declare(strict_types=1);
 
-namespace AppBundle\Event\Subscriber;
+namespace App\Event\Subscriber;
 
 use EzSystems\DoctrineSchema\API\Event\SchemaBuilderEvent;
 use EzSystems\DoctrineSchema\API\Event\SchemaBuilderEvents;

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Migration\FieldHandler;
+namespace App\Migration\FieldHandler;
 
 use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
 use eZ\Publish\Core\FieldType\ImageAsset\Value as ImageValue;

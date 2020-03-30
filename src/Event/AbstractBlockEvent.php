@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace AppBundle\Event;
+namespace App\Event;
 
-use AppBundle\Helper\ContentHelper;
-use AppBundle\Helper\LocationHelper;
-use AppBundle\Value\BlockPreRenderValueObject;
-use AppBundle\Value\BlockResponseValueObject;
-use AppBundle\Value\PageBuilderBlockValueObject;
+use App\Helper\ContentHelper;
+use App\Helper\LocationHelper;
+use App\Value\BlockPreRenderValueObject;
+use App\Value\BlockResponseValueObject;
+use App\Value\PageBuilderBlockValueObject;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
@@ -21,10 +21,10 @@ use EzSystems\PlatformHttpCacheBundle\Handler\TagHandler;
 
 abstract class AbstractBlockEvent
 {
-    /** @var \AppBundle\Helper\LocationHelper */
+    /** @var \App\Helper\LocationHelper */
     protected $locationHelper;
 
-    /** @var \AppBundle\Helper\ContentHelper */
+    /** @var \App\Helper\ContentHelper */
     protected $contentHelper;
 
     /** @var \eZ\Publish\Core\QueryType\QueryType */
@@ -34,8 +34,8 @@ abstract class AbstractBlockEvent
     protected $tagHandler;
 
     /**
-     * @param \AppBundle\Helper\LocationHelper $locationHelper
-     * @param \AppBundle\Helper\ContentHelper $contentHelper
+     * @param \App\Helper\LocationHelper $locationHelper
+     * @param \App\Helper\ContentHelper $contentHelper
      * @param \eZ\Publish\Core\QueryType\QueryType $queryType
      * @param \EzSystems\PlatformHttpCacheBundle\Handler\TagHandler $tagHandler
      */
@@ -52,7 +52,7 @@ abstract class AbstractBlockEvent
     }
 
     /**
-     * @param \AppBundle\Value\PageBuilderBlockValueObject $blockValueObject
+     * @param \App\Value\PageBuilderBlockValueObject $blockValueObject
      *
      * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
      * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
@@ -70,7 +70,7 @@ abstract class AbstractBlockEvent
         $blockValueObject->renderRequest->setParameters($parameters);
     }
 
-    /** @param \AppBundle\Value\PageBuilderBlockValueObject $blockValueObject */
+    /** @param \App\Value\PageBuilderBlockValueObject $blockValueObject */
     protected function processResponse(PageBuilderBlockValueObject $blockValueObject): void
     {
         /** @var BlockResponseValueObject $blockValueObject */
@@ -95,7 +95,7 @@ abstract class AbstractBlockEvent
     }
 
     /**
-     * @param \AppBundle\Value\PageBuilderBlockValueObject $blockValueObject
+     * @param \App\Value\PageBuilderBlockValueObject $blockValueObject
      *
      * @return array
      *

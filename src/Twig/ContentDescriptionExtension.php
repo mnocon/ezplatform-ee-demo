@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace AppBundle\Twig;
+namespace App\Twig;
 
 use eZ\Publish\Core\Helper\FieldHelper;
 use eZ\Publish\API\Repository\Values\Content\Content;

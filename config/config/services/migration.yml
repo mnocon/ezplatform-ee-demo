@@ -15,7 +15,7 @@ services:
         tags:
         - { name: ez_migration_bundle.complex_field, fieldtype: ezform, priority: 0 }
 
-    AppBundle\Migration\FieldHandler\EzImageAsset:
+    App\Migration\FieldHandler\EzImageAsset:
         parent: ez_migration_bundle.complex_field
         arguments:
             - '@ez_migration_bundle.reference_resolver.customreference'

@@ -3,7 +3,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace AppBundle\QueryType;
+namespace App\QueryType;
 
 use eZ\Publish\Core\QueryType\QueryType;
 use eZ\Publish\API\Repository\Values\Content\Query;

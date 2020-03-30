@@ -3,10 +3,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace AppBundle\Twig;
+namespace App\Twig;
 
-use AppBundle\PremiumContent\HtmlRenderer;
-use AppBundle\User\UserGroups;
+use App\PremiumContent\HtmlRenderer;
+use App\User\UserGroups;
 use Twig_Extension;
 use Twig_SimpleFilter;
 use Twig_SimpleFunction;
@@ -16,10 +16,10 @@ use Twig_SimpleFunction;
  */
 class PremiumContentExtension extends Twig_Extension
 {
-    /** @var \AppBundle\PremiumContent\HtmlRenderer */
+    /** @var \App\PremiumContent\HtmlRenderer */
     private $htmlRenderer;
 
-    /** @var \AppBundle\User\UserGroups */
+    /** @var \App\User\UserGroups */
     private $userGroups;
 
     /** @var int[] */
@@ -29,8 +29,8 @@ class PremiumContentExtension extends Twig_Extension
     private $hasAccess;
 
     /**
-     * @param \AppBundle\PremiumContent\HtmlRenderer $htmlRenderer
-     * @param \AppBundle\User\UserGroups $userGroups
+     * @param \App\PremiumContent\HtmlRenderer $htmlRenderer
+     * @param \App\User\UserGroups $userGroups
      * @param array $allowedUserGroupsLocationIds
      */
     public function __construct(

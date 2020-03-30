@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace AppBundle\Event\Subscriber;
+namespace App\Event\Subscriber;
 
-use AppBundle\Event\AbstractBlockEvent;
-use AppBundle\Value\BlockPreRenderValueObject;
-use AppBundle\Value\BlockResponseValueObject;
+use App\Event\AbstractBlockEvent;
+use App\Value\BlockPreRenderValueObject;
+use App\Value\BlockResponseValueObject;
 use EzSystems\EzPlatformPageFieldType\Event\BlockResponseEvent;
 use EzSystems\EzPlatformPageFieldType\Event\BlockResponseEvents;
 use EzSystems\EzPlatformPageFieldType\FieldType\Page\Block\Renderer\BlockRenderEvents;

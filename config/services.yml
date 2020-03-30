@@ -19,14 +19,14 @@ services:
         public: false
 
     app.query_type.menu:
-        class: AppBundle\QueryType\MenuQueryType
+        class: App\QueryType\MenuQueryType
         calls:
             - [setLanguages, [$languages$]]
         tags:
             - { name: ezpublish.query_type }
 
     app.mail.sender:
-        class: AppBundle\Mail\Sender
+        class: App\Mail\Sender
         public: true
         arguments:
             - '@mailer'
@@ -36,65 +36,65 @@ services:
             - '%app.contact_form.recipient_email%'
 
     app.twig.content_info_by_location_id_extension:
-        class: AppBundle\Twig\ContentInfoByLocationIdExtension
+        class: App\Twig\ContentInfoByLocationIdExtension
         arguments:
             - '@ezpublish.api.service.location'
             - '@ezpublish.api.service.content'
 
-    AppBundle\Twig\YoutubeIdExtractorExtension:
+    App\Twig\YoutubeIdExtractorExtension:
         tags:
             - { name: twig.extension }
 
-    AppBundle\QueryType\BlockQueryType: ~
+    App\QueryType\BlockQueryType: ~
 
-    AppBundle\Event\Subscriber\PlacesBlockSubscriber:
+    App\Event\Subscriber\PlacesBlockSubscriber:
         arguments:
-            $queryType: '@AppBundle\QueryType\BlockQueryType'
+            $queryType: '@App\QueryType\BlockQueryType'
 
-    AppBundle\Event\Subscriber\TastesBlockSubscriber:
+    App\Event\Subscriber\TastesBlockSubscriber:
         arguments:
-            $queryType: '@AppBundle\QueryType\BlockQueryType'
+            $queryType: '@App\QueryType\BlockQueryType'
 
-    AppBundle\Twig\SearchResultExtractorExtension:
+    App\Twig\SearchResultExtractorExtension:
         tags:
             - { name: twig.extension }
 
-    AppBundle\PremiumContent\HtmlRenderer: ~
-    AppBundle\User\UserGroups: ~
+    App\PremiumContent\HtmlRenderer: ~
+    App\User\UserGroups: ~
 
-    AppBundle\Twig\PremiumContentExtension:
+    App\Twig\PremiumContentExtension:
         arguments:
-            - '@AppBundle\PremiumContent\HtmlRenderer'
-            - '@AppBundle\User\UserGroups'
+            - '@App\PremiumContent\HtmlRenderer'
+            - '@App\User\UserGroups'
             - '%app.premium_content.allowed_user_groups.location_ids%'
         tags:
             - { name: twig.extension }
 
-    AppBundle\Twig\ContentDescriptionExtension:
+    App\Twig\ContentDescriptionExtension:
         arguments:
         - "@ezpublish.field_helper"
         - "@?logger"
         tags:
             - { name: twig.extension }
 
-    AppBundle\Event\TemplateAttributeBlockNameListener:
+    App\Event\TemplateAttributeBlockNameListener:
         tags:
             - { name: kernel.event_subscriber }
 
-    AppBundle\Event\PageFieldType\Attribute\AttributeSerializationSubscriber: ~
+    App\Event\PageFieldType\Attribute\AttributeSerializationSubscriber: ~
 
-    AppBundle\Event\Listener\RenderMenuListener:
+    App\Event\Listener\RenderMenuListener:
         arguments:
             $credentialsChecker: '@EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsChecker'
         tags:
             - { name: kernel.event_listener, event: ezplatform_admin_ui.menu_configure.main_menu, method: renderMenu, priority: -45 }
 
-    AppBundle\Event\Workflow\PublishOnLastStageSubscriber:
+    App\Event\Workflow\PublishOnLastStageSubscriber:
         arguments:
             $publishOnLastStageWorkflows: '%app.workflow.publish_on_last_stage%'
 
-    AppBundle\Event\Subscriber\EndWorkflowSubscriber: ~
+    App\Event\Subscriber\EndWorkflowSubscriber: ~
 
-    AppBundle\Event\Subscriber\Recommendation\UserCollectionSubscriber:
+    App\Event\Subscriber\Recommendation\UserCollectionSubscriber:
         arguments:
             $membersUserGroupId: '%app.members_user_group_id%'

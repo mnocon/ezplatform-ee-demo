@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\AppBundle\Twig;
+namespace Tests\App\Twig;
 
-use AppBundle\Twig\YoutubeIdExtractorExtension;
+use App\Twig\YoutubeIdExtractorExtension;
 use PHPUnit\Framework\TestCase;
 use Twig_Function;
 
