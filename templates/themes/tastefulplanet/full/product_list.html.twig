@@ -143,7 +143,7 @@
                     {% if children.haveToPaginate() %}
                         {{ pagerfanta(children, 'twitter_bootstrap4_translated', {
                             routeName: location,
-                            routeParams: ezpublish.requestStack.masterRequest.query.all
+                            routeParams: ezplatform.requestStack.masterRequest.query.all
                         }) }}
                     {% endif %}
                 </div>
