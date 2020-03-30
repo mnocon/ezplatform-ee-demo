@@ -79,8 +79,7 @@
         "twig/extra-bundle": "^3.0",
         "ezsystems/ezrecommendation-client": "^2.0@dev",
         "netgen/tagsbundle": "^4.0@beta",
-        "ezsystems/ezstudio-personalized-block": "^3.0@dev",
-
+        "ezsystems/ezstudio-personalized-block": "^3.0@dev"
     },
     "require-dev": {
         "behat/behat": "^3.6",
