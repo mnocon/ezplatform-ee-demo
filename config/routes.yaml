@@ -1,20 +1,9 @@
-_eztagsRoutes:
-    resource: "@NetgenTagsBundle/Resources/config/routing.yml"
-
-_novaezseoRoutes:
-    resource: "@NovaeZSEOBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 app.submitted:
     path: /contact/submitted
     defaults:
         _controller: app.controller.contactform:submittedAction
         template: "@ezdesign/full/contact_form_submitted.html.twig"
     methods: [GET]
-
-gregwar_captcha_routing:
-    resource: "@GregwarCaptchaBundle/Resources/config/routing/routing.yml"
 
 # Custom redirection from /ez to /admin, feel free to adjust to your needs or remove if you don't need it
 platform1_admin_route:

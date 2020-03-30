@@ -167,10 +167,6 @@ ezplatform:
         no:
             languages: [nor-NO, eng-GB]
 
-    url_alias:
-        slug_converter:
-            transformation: 'urlalias_lowercase'
-
         admin_group:
             # System languages. Note that by default, content, content types, and other data are in eng-GB locale,
             # so removing eng-GB from this list may lead to errors or content not being shown, unless you change
@@ -186,6 +182,11 @@ ezplatform:
                     - 43 # Media
                     - 48 # Setup
                     - 55 # Forms
+
+    
+    url_alias:
+        slug_converter:
+            transformation: 'urlalias_lowercase'
 
 framework:
     translator: { fallback: '%locale_fallback%' }

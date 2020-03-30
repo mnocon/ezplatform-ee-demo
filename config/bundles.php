@@ -63,5 +63,7 @@ return [
     BabDev\PagerfantaBundle\BabDevPagerfantaBundle::class => ['all' => true],
     FriendsOfBehat\SymfonyExtension\Bundle\FriendsOfBehatSymfonyExtensionBundle::class => ['test' => true, 'behat' => true],
     Hautelook\TemplatedUriBundle\HautelookTemplatedUriBundle::class => ['all' => true],
+    Lolautruche\EzCoreExtraBundle\EzCoreExtraBundle::class => ['all' => true],
+    Netgen\TagsBundle\NetgenTagsBundle::class => ['all' => true],
     EzSystems\EzRecommendationClientBundle\EzRecommendationClientBundle::class => ['all' => true],
 ];

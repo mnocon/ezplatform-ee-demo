@@ -6,6 +6,8 @@
 namespace App\Twig;
 
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 use Twig_Extension;
 use Twig_SimpleFunction;
 use eZ\Publish\API\Repository\LocationService as LocationServiceInterface;
@@ -14,7 +16,7 @@ use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
 /**
  * Twig helper for fetching ContentInfo Based on Location Id.
  */
-class ContentInfoByLocationIdExtension extends Twig_Extension
+class ContentInfoByLocationIdExtension extends AbstractExtension
 {
     /** var \eZ\Publish\API\Repository\LocationService */
     private $locationService;
@@ -52,8 +54,8 @@ class ContentInfoByLocationIdExtension extends Twig_Extension
     public function getFunctions()
     {
         return [
-            new Twig_SimpleFunction('app_content_info_by_location_id', [$this, 'contentInfoByLocationId']),
-            new Twig_SimpleFunction('app_content_info_by_content_id', [$this, 'contentInfoByContentId']),
+            new TwigFunction('app_content_info_by_location_id', [$this, 'contentInfoByLocationId']),
+            new TwigFunction('app_content_info_by_content_id', [$this, 'contentInfoByContentId']),
         ];
     }
 

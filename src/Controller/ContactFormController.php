@@ -5,41 +5,32 @@
  */
 namespace App\Controller;
 
-use Symfony\Component\Form\FormFactory;
+use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\TwigBundle\TwigEngine as Templating;
-use Symfony\Component\Routing\Router;
 use eZ\Publish\Core\MVC\Symfony\View\View;
 use App\Form\Type\ContactType;
 use App\Mail\Sender;
+use Symfony\Component\Routing\RouterInterface;
+use Twig\Environment;
 
 class ContactFormController
 {
-    /** @var \Symfony\Component\Form\FormFactory */
     protected $formFactory;
 
     /** @var \App\Mail\Sender */
     protected $sender;
 
-    /** var \Symfony\Bundle\TwigBundle\TwigEngine */
     protected $templating;
 
-    /** @var \Symfony\Component\Routing\Router */
     protected $router;
 
-    /**
-     * @param \Symfony\Component\Form\FormFactory $formFactory
-     * @param \App\Mail\Sender $sender
-     * @param \Symfony\Bundle\TwigBundle\TwigEngine $templating
-     * @param \Symfony\Component\Routing\Router $router
-     */
     public function __construct(
-        FormFactory $formFactory,
+        FormFactoryInterface $formFactory,
         Sender $sender,
-        Templating $templating,
-        Router $router
+        Environment $templating,
+        RouterInterface $router
     ) {
         $this->formFactory = $formFactory;
         $this->sender = $sender;

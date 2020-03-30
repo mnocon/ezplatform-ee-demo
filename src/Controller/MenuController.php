@@ -9,10 +9,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Templating\EngineInterface;
 use eZ\Publish\API\Repository\SearchService;
 use App\QueryType\MenuQueryType;
+use Twig\Environment;
 
 class MenuController
 {
-    /** @var \Symfony\Bundle\TwigBundle\TwigEngine */
     protected $templating;
 
     /** @var \eZ\Publish\API\Repository\SearchService */
@@ -27,15 +27,8 @@ class MenuController
     /** @var array */
     protected $topMenuContentTypeIdentifier;
 
-    /**
-     * @param \Symfony\Component\Templating\EngineInterface $templating
-     * @param \eZ\Publish\API\Repository\SearchService $searchService
-     * @param \App\QueryType\MenuQueryType $menuQueryType
-     * @param int $topMenuParentLocationId
-     * @param array $topMenuContentTypeIdentifier
-     */
     public function __construct(
-        EngineInterface $templating,
+        Environment $templating,
         SearchService $searchService,
         MenuQueryType $menuQueryType,
         $topMenuParentLocationId,

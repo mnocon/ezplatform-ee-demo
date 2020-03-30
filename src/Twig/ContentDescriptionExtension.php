@@ -11,13 +11,13 @@ namespace App\Twig;
 use eZ\Publish\Core\Helper\FieldHelper;
 use eZ\Publish\API\Repository\Values\Content\Content;
 use Psr\Log\LoggerInterface;
-use Twig_Extension;
-use Twig_SimpleFunction;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 /**
  * Twig content extension for eZ Publish Demo specific usage.
  */
-class ContentDescriptionExtension extends Twig_Extension
+class ContentDescriptionExtension extends AbstractExtension
 {
     /**
      * @var \eZ\Publish\Core\Helper\FieldHelper
@@ -49,7 +49,7 @@ class ContentDescriptionExtension extends Twig_Extension
     public function getFunctions()
     {
         return array(
-            new Twig_SimpleFunction(
+            new TwigFunction(
                 'ez_get_description_or_first_richtext_field_name',
                 array($this, 'getDescriptionOrFirstRichtextFieldName')
             ),

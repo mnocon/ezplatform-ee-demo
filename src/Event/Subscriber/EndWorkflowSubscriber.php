@@ -9,9 +9,9 @@ declare(strict_types=1);
 namespace App\Event\Subscriber;
 
 use eZ\Publish\API\Repository\ContentService;
+use eZ\Publish\API\Repository\Events\Content\CreateContentEvent;
 use eZ\Publish\API\Repository\PermissionResolver;
 use eZ\Publish\API\Repository\Repository;
-use eZ\Publish\Core\MVC\Symfony\Event\SignalEvent;
 use eZ\Publish\Core\MVC\Symfony\MVCEvents;
 use eZ\Publish\Core\SignalSlot\Signal\ContentService\PublishVersionSignal;
 use EzSystems\EzPlatformWorkflow\Exception\NotFoundException;
@@ -72,27 +72,13 @@ class EndWorkflowSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            MVCEvents::API_SIGNAL => ['onPublishVersionSignal', -50],
+            CreateContentEvent::class => ['onPublishVersionSignal', -50],
         ];
     }
 
-    /**
-     * Automatically starts supported workflows after updating content.
-     *
-     * @param \eZ\Publish\Core\MVC\Symfony\Event\SignalEvent $event
-     *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
-     */
-    public function onPublishVersionSignal(SignalEvent $event): void
+    public function onPublishVersionSignal(CreateContentEvent $event): void
     {
-        $signal = $event->getSignal();
-
-        if (!$signal instanceof PublishVersionSignal) {
-            return;
-        }
-
-        $this->doEndWorkflows((int)$signal->contentId, (int)$signal->versionNo);
+        $this->doEndWorkflows($event->getContent()->getVersionInfo()->getContentInfo()->id, $event->getContent()->getVersionInfo()->versionNo);
     }
 
     /**

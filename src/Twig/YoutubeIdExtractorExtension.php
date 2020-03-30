@@ -5,13 +5,15 @@
  */
 namespace App\Twig;
 
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 use Twig_Extension;
 use Twig_SimpleFunction;
 
 /**
  * Twig helper for extract video id from youtube url.
  */
-class YoutubeIdExtractorExtension extends Twig_Extension
+class YoutubeIdExtractorExtension extends AbstractExtension
 {
     /**
      * @inheritdoc
@@ -27,7 +29,7 @@ class YoutubeIdExtractorExtension extends Twig_Extension
     public function getFunctions()
     {
         return [
-            new Twig_SimpleFunction('app_youtube_extract_id', [$this, 'extractId']),
+            new TwigFunction('app_youtube_extract_id', [$this, 'extractId']),
         ];
     }
 

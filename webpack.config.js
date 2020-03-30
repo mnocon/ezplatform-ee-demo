@@ -16,14 +16,14 @@ eZConfigManager.add({
     eZConfig,
     entryName: 'ezplatform-admin-ui-layout-js',
     newItems: [
-        path.resolve(__dirname, './web/assets/js/hotjar.js'),
+        path.resolve(__dirname, './public/assets/js/hotjar.js'),
     ],
 });
 
 Encore.addEntry('demo', [
-    path.resolve(__dirname, './web/assets/scss/demo.scss'),
-    path.resolve(__dirname, './web/assets/js/blocks/placesMapLoader.js'),
-    path.resolve(__dirname, './web/assets/js/main.js'),
+    path.resolve(__dirname, './public/assets/scss/demo.scss'),
+    path.resolve(__dirname, './public/assets/js/blocks/placesMapLoader.js'),
+    path.resolve(__dirname, './public/assets/js/main.js'),
 ]);
 
 const projectConfig = Encore.getWebpackConfig();

@@ -7,13 +7,15 @@ namespace App\Twig;
 
 use eZ\Publish\API\Repository\Values\Content\Search\SearchHit;
 use eZ\Publish\API\Repository\Values\Content\Search\SearchResult;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 use Twig_Extension;
 use Twig_Function;
 
 /**
  * Twig helper for extract SearchResult object and returns array
  */
-class SearchResultExtractorExtension extends Twig_Extension
+class SearchResultExtractorExtension extends AbstractExtension
 {
     /**
      * {@inheritdoc}
@@ -29,7 +31,7 @@ class SearchResultExtractorExtension extends Twig_Extension
     public function getFunctions()
     {
         return [
-            new Twig_Function('app_search_result_extract', [$this, 'extractSearchResult'])
+            new TwigFunction('app_search_result_extract', [$this, 'extractSearchResult'])
         ];
     }
 

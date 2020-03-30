@@ -11,11 +11,11 @@ namespace App\Event\Listener;
 use App\User\UserGroups;
 use eZ\Publish\Core\MVC\Symfony\Security\Authorization\Attribute;
 use EzSystems\EzPlatformAdminUi\Menu\Event\ConfigureMenuEvent;
-use EzSystems\EzRecommendationClient\Config\CredentialsCheckerInterface;
+use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
 use Knp\Menu\ItemInterface;
 use Knp\Menu\Util\MenuManipulator;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class RenderMenuListener
 {
@@ -32,18 +32,11 @@ class RenderMenuListener
     /** @var \App\User\UserGroups */
     private $userGroups;
 
-    /** @var \Symfony\Component\Translation\TranslatorInterface */
     private $translator;
 
-    /**
-     * @param \Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface $authorizationChecker
-     * @param \EzSystems\EzRecommendationClient\Config\CredentialsCheckerInterface $credentialsChecker
-     * @param \App\User\UserGroups $userGroups
-     * @param \Symfony\Component\Translation\TranslatorInterface $translator
-     */
     public function __construct(
         AuthorizationCheckerInterface $authorizationChecker,
-        CredentialsCheckerInterface $credentialsChecker,
+        CredentialsResolverInterface $credentialsChecker,
         UserGroups $userGroups,
         TranslatorInterface $translator
     ) {

@@ -47,7 +47,7 @@ class UserCollectionSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            GenerateUserCollectionDataEvent::NAME => ['onGenerateUserCollectionData', 20],
+            GenerateUserCollectionDataEvent::class => ['onGenerateUserCollectionData', 20],
         ];
     }
 
