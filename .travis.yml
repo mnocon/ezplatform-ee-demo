@@ -5,4 +5,8 @@ php:
   - '7.1'
   
 script:		
+php:
+  - '7.3'
+
+script:
   - echo 'Test suite moved to PageBuilder bundle'

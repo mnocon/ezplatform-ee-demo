@@ -5,7 +5,7 @@ const configManagers = require('./var/encore/ez.config.manager.js');
 const dotenv = require('dotenv-webpack');
 
 module.exports = (Encore) => {
-    Encore.setOutputPath('web/assets/ezplatform/build')
+    Encore.setOutputPath('public/assets/ezplatform/build')
         .setPublicPath('/assets/ezplatform/build')
         .addExternals({
             react: 'React',
