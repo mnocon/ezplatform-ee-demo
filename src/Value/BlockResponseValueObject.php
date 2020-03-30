@@ -10,6 +10,5 @@ namespace App\Value;
 
 class BlockResponseValueObject extends PageBuilderBlockValueObject
 {
-    /** @var \Symfony\Component\HttpFoundation\Response */
     public $response;
 }

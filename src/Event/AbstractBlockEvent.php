@@ -18,6 +18,7 @@ use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
 use eZ\Publish\Core\QueryType\QueryType as QueryTypeInterface;
 use EzSystems\PlatformHttpCacheBundle\Handler\TagHandler;
+use Psr\Http\Message\ResponseInterface;
 
 abstract class AbstractBlockEvent
 {
@@ -90,8 +91,10 @@ abstract class AbstractBlockEvent
             $tags[] = 'relation-' . $content->id;
         }
 
+
+
         $this->tagHandler->addTags(array_unique($tags));
-        $this->tagHandler->tagResponse($blockValueObject->response);
+        $this->tagHandler->tagSymfonyResponse($blockValueObject->response);
     }
 
     /**
