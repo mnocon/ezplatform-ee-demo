@@ -2,7 +2,7 @@ ezrecommendation:
     system:
         default:
             authentication:
-                customer_id: '%env(int:RECOMMENDATION_CUSTOMER_ID)%'
+                customer_id: '%env(RECOMMENDATION_CUSTOMER_ID)%'
                 license_key: '%env(RECOMMENDATION_LICENSE_KEY)%'
             included_content_types: [blog_post, article]
             random_content_types: [blog_post, article]
@@ -10,5 +10,5 @@ ezrecommendation:
             export:
                 authentication:
                     method: 'basic'
-                    login: '%env(int:RECOMMENDATION_CUSTOMER_ID)%'
+                    login: '%env(RECOMMENDATION_CUSTOMER_ID)%'
                     password: '%env(RECOMMENDATION_LICENSE_KEY)%'
