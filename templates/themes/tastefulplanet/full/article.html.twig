@@ -53,7 +53,7 @@
                     <div class="field-body">
                         {% set displayPremiumContentInfo = false %}
 
-                        {% if not ez_is_field_empty(content, 'premium_content') %}
+                        {% if not ez_field_is_empty(content, 'premium_content') %}
                             {% if ez_has_access_to_premium_content() %}
                                 {{ ez_render_field(content, 'body') }}
                             {% else %}

@@ -7,7 +7,7 @@
 
 {% block content %}
     <section class="content-type-place-list full-view">
-        {% if not ez_is_field_empty( content, 'image' ) %}
+        {% if not ez_field_is_empty( content, 'image' ) %}
             <div class="banner-image">
                 <div class="thumbnail text-center">
                     {{ ez_render_field(content, 'image', {

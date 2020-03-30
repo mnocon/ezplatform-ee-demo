@@ -12,7 +12,7 @@
                 </h2>
             </div>
             <div class="d-none d-md-none d-sm-block d-xs-block item-image-sm">
-                {% if ez_field(content, 'image') and not ez_is_field_empty(content, 'image') %}
+                {% if ez_field(content, 'image') and not ez_field_is_empty(content, 'image') %}
                     <a href="{{ url }}" title="{{ title }}">
                         {{ ez_render_field(content, 'image', {
                             'parameters': {
@@ -24,14 +24,14 @@
                 {% endif %}
             </div>
 
-            {% if ez_field(content, 'intro') and not ez_is_field_empty(content, 'intro') %}
+            {% if ez_field(content, 'intro') and not ez_field_is_empty(content, 'intro') %}
                 <div class="item-intro">
                     {{ ez_render_field(content, 'intro') }}
                 </div>
             {% endif %}
         </div>
         <div class="col-md-3 d-none d-sm-none d-md-block d-lg-block item-image">
-            {% if ez_field(content, 'image') and not ez_is_field_empty(content, 'image') %}
+            {% if ez_field(content, 'image') and not ez_field_is_empty(content, 'image') %}
                 <a href="{{ url }}" title="{{ title }}">
                     {{ ez_render_field(content, 'image', {
                         'parameters': {

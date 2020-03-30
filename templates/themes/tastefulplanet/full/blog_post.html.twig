@@ -33,12 +33,12 @@
                         <h1 class="field-title">{{ ez_render_field(content, 'title') }}</h1>
                     </div>
                     <div class="meta">
-                        {% if not ez_is_field_empty(content, 'author') %}
+                        {% if not ez_field_is_empty(content, 'author') %}
                             <span class="field-author">
                                 {{ ez_field_value(content, 'author') }}
                             </span>
                         {% endif %}
-                        {% if not ez_is_field_empty( content, 'authors_position' ) %}
+                        {% if not ez_field_is_empty( content, 'authors_position' ) %}
                         <span class="field-authors-position">
                             - {{ ez_field_value(content, 'authors_position') }}
                         </span>
