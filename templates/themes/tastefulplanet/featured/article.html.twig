@@ -8,10 +8,10 @@
         }) }}
     </div>
     <div class="col-md-6">
-        <h2 class="field-title"><a href="{{ path( location ) }}">{{ ez_render_field (content, 'title') }}</a></h2>
+        <h2 class="field-title"><a href="{{ ez_path(location ) }}">{{ ez_render_field (content, 'title') }}</a></h2>
 
         {{ ez_render_field (content, 'intro') }}
 
-        <a href="{{ path( location ) }}" class="read-more">{{ "Read More"|trans }}</a>
+        <a href="{{ ez_path(location ) }}" class="read-more">{{ "Read More"|trans }}</a>
     </div>
 </div>
