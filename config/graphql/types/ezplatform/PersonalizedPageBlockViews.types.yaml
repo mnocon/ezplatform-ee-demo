@@ -1,0 +1,10 @@
+PersonalizedPageBlockViews:
+    type: enum
+    config:
+        values:
+            cards:
+                value: '@ezdesign/blocks/personalized/cards.html.twig'
+                description: Cards
+            list:
+                value: '@ezdesign/blocks/personalized/list.html.twig'
+                description: List

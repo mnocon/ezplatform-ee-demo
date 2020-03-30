@@ -1,2 +1,13 @@
 TastesPageBlockViews:
     type: enum
+    config:
+        values:
+            cards:
+                value: '@ezdesign/blocks/tastes/cards.html.twig'
+                description: Cards
+            home:
+                value: '@ezdesign/blocks/tastes/home.html.twig'
+                description: 'Home page'
+            list:
+                value: '@ezdesign/blocks/tastes/list.html.twig'
+                description: List

@@ -1,0 +1,4 @@
+PersonalizedPageBlock:
+    type: object
+    inherits:
+        - BasePageBlock

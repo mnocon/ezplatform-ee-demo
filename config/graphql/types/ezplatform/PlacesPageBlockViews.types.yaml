@@ -1,2 +1,13 @@
 PlacesPageBlockViews:
     type: enum
+    config:
+        values:
+            cards:
+                value: '@ezdesign/blocks/places/cards.html.twig'
+                description: Cards
+            list:
+                value: '@ezdesign/blocks/places/list.html.twig'
+                description: List
+            map:
+                value: '@ezdesign/blocks/places/map.html.twig'
+                description: Map

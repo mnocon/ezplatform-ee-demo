@@ -1,2 +1,7 @@
 HeroPageBlockViews:
     type: enum
+    config:
+        values:
+            default:
+                value: '@ezdesign/blocks/hero/default.html.twig'
+                description: Hero

@@ -2,6 +2,9 @@ GalleryPageBlockViews:
     type: enum
     config:
         values:
+            gallery:
+                value: '@ezdesign/blocks/gallery/gallery.html.twig'
+                description: Gallery
             default:
                 value: '@EzPlatformPageFieldType/blocks/gallery.html.twig'
                 description: 'Default block layout'

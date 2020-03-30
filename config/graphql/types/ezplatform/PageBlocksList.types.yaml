@@ -24,6 +24,8 @@ PageBlocksList:
                 value: SchedulePageBlock
             richtext:
                 value: RichtextPageBlock
+            personalized:
+                value: PersonalizedPageBlock
             hero:
                 value: HeroPageBlock
             places:

@@ -2,6 +2,12 @@ CollectionPageBlockViews:
     type: enum
     config:
         values:
+            cards:
+                value: '@ezdesign/blocks/collection/cards.html.twig'
+                description: Cards
+            list:
+                value: '@ezdesign/blocks/collection/list.html.twig'
+                description: List
             default:
                 value: '@EzPlatformPageFieldType/blocks/collection.html.twig'
                 description: 'Default block layout'

@@ -2,6 +2,9 @@ BannerPageBlockViews:
     type: enum
     config:
         values:
+            banner:
+                value: '@ezdesign/blocks/banner/banner.html.twig'
+                description: Banner
             default:
                 value: '@EzPlatformPageFieldType/blocks/banner.html.twig'
                 description: 'Default block layout'

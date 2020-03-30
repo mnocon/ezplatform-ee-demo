@@ -2,6 +2,9 @@ VideoPageBlockViews:
     type: enum
     config:
         values:
+            player:
+                value: '@ezdesign/blocks/video/player.html.twig'
+                description: Player
             default:
                 value: '@EzPlatformPageFieldType/blocks/video.html.twig'
                 description: 'Default block layout'

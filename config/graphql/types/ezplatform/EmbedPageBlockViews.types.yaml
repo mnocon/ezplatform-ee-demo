@@ -2,6 +2,12 @@ EmbedPageBlockViews:
     type: enum
     config:
         values:
+            embed:
+                value: '@ezdesign/blocks/embed/embed.html.twig'
+                description: Hero
+            embed_wide:
+                value: '@ezdesign/blocks/embed/embed_wide.html.twig'
+                description: Wide
             default:
                 value: '@EzPlatformPageFieldType/blocks/embed.html.twig'
                 description: 'Default block layout'

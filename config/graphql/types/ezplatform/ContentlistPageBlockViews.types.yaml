@@ -2,6 +2,15 @@ ContentlistPageBlockViews:
     type: enum
     config:
         values:
+            blog:
+                value: '@ezdesign/blocks/contentlist/blog.html.twig'
+                description: Blog
+            cards:
+                value: '@ezdesign/blocks/contentlist/cards.html.twig'
+                description: Cards
+            list:
+                value: '@ezdesign/blocks/contentlist/list.html.twig'
+                description: List
             default:
                 value: '@EzPlatformPageFieldType/blocks/contentlist.html.twig'
                 description: 'Default block layout'

@@ -2,6 +2,12 @@ SchedulePageBlockViews:
     type: enum
     config:
         values:
+            cards:
+                value: '@ezdesign/blocks/schedule/cards.html.twig'
+                description: Cards
+            list:
+                value: '@ezdesign/blocks/schedule/list.html.twig'
+                description: List
             default:
                 value: '@EzPlatformPageFieldType/blocks/schedule.html.twig'
                 description: 'Default block layout'
