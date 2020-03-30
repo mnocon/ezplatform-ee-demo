@@ -30,6 +30,8 @@
                         }) }}
                     {% endif %}
                 </div>
+                
+
                 <div class="col-md-5">
                     <div class="product-main-title">
                         <h2>{{ ez_content_name(content) }}</h2>
@@ -93,25 +95,26 @@
                         {% endif %}
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12 product-main-info">
-                <ul class="nav nav-tabs nav-justified">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#ingredients" role="tab">{{ 'Ingredients'|trans }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#instructions" role="tab">{{ 'Cooking instructions'|trans }}</a>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane fade in show active" id="ingredients" role="tabpanel">
-                        <div class="product-main-ingredients">
-                            {{ ez_render_field(content, 'ingredients') }}
+
+                 <div class="col-md-12 product-main-info">
+                    <ul class="nav nav-tabs nav-justified">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#ingredients" role="tab">{{ 'Ingredients'|trans }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#instructions" role="tab">{{ 'Cooking instructions'|trans }}</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in show active" id="ingredients" role="tabpanel">
+                            <div class="product-main-ingredients">
+                                {{ ez_render_field(content, 'ingredients') }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="instructions" role="tabpanel">
-                        <div class="product-main-instruction">
-                            {{ ez_render_field(content, 'cooking_instructions') }}
+                        <div class="tab-pane fade" id="instructions" role="tabpanel">
+                            <div class="product-main-instruction">
+                                {{ ez_render_field(content, 'cooking_instructions') }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,7 +130,7 @@
                     <span class="share-buttons-label">Share</span>
                     <div class="share-buttons-list">
                         {% if location is defined and not location.isDraft %}
-                            {% set url = url(location) %}
+                            {% set url = ez_url(location) %}
                             {% set title = ez_content_name(content)|url_encode %}
                             <a href="https://twitter.com/intent/tweet?original_referer={{ url }}&amp;atext={{ title }}&amp;url={{ url }}&amp;via=ezsystems" target="_blank">Twitter</a>
                             <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]={{ url }}&amp;p[title]={{ title }}" target="_blank">Facebook</a>
