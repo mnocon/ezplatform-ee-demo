@@ -1,5 +1,5 @@
 <div class="product-list-item">
-    {% set url = path(location) %}
+    {% set url = ez_path(location) %}
     <a href="{{ url }}">
         {{ ez_render_field(content, 'image', {
             parameters: {

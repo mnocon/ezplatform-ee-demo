@@ -6,7 +6,7 @@
                 {{ fos_httpcache_tag('relation-' ~ content.content.id) }}
                 <div class="block-contentlist__card">
                     <h4 class="block-contentlist__card-title">
-                        <a class="block-contentlist__card-link" href="{{ path(content.location) }}">{{ ez_content_name(content.content) }}</a>
+                        <a class="block-contentlist__card-link" href="{{ ez_path(content.location) }}">{{ ez_content_name(content.content) }}</a>
                     </h4>
                     <div class="block-contentlist__card-body">
                     {% if content.content.getField('intro') %}
