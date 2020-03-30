@@ -1,0 +1,13 @@
+SubscribeContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            image:
+                type: ImageFieldInput
+            title:
+                type: String
+            description:
+                type: RichTextFieldInput
+            metas:
+                type: String
+                description: 'Metas for Search Engine Optimizations'

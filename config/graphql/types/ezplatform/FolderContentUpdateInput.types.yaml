@@ -1,0 +1,27 @@
+FolderContentUpdateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String
+                description: 'Title shown on website.'
+            shortName:
+                type: String
+                description: 'Descriptive title, non displayed.'
+            shortDescription:
+                type: RichTextFieldInput
+                description: 'Displayed as a separate paragraph at top.'
+            description:
+                type: RichTextFieldInput
+                description: 'Body of text.'
+            image:
+                type: ImageFieldInput
+                description: 'Image for header.'
+            showChildren:
+                type: Boolean
+                description: 'If checked folder items displayed.'
+            tags:
+                type: String
+            metas:
+                type: String
+                description: 'Metas for Search Engine Optimizations'

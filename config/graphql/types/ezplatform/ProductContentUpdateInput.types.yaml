@@ -1,0 +1,35 @@
+ProductContentUpdateInput:
+    type: input-object
+    config:
+        fields:
+            title:
+                type: String
+            description:
+                type: RichTextFieldInput
+            cookingInstructions:
+                type: RichTextFieldInput
+            ingredients:
+                type: RichTextFieldInput
+            image:
+                type: ImageFieldInput
+            price:
+                type: Float
+            serving:
+                type: Int
+            spicy:
+                type: '[Int]'
+            dairy:
+                type: Boolean
+            egg:
+                type: Boolean
+            nuts:
+                type: Boolean
+            seafood:
+                type: Boolean
+            gluten:
+                type: Boolean
+            tags:
+                type: String
+            metas:
+                type: String
+                description: 'Metas for Search Engine Optimizations'

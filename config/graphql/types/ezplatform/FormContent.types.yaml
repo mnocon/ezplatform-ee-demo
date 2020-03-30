@@ -1,0 +1,18 @@
+FormContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            title:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "title"])'
+            description:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "description"])'
+            form:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "form"])'

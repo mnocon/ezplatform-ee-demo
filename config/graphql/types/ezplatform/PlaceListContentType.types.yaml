@@ -1,0 +1,28 @@
+PlaceListContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            shortName:
+                type: TextLineFieldDefinition
+                description: 'Short description.'
+                resolve: '@=value.getFieldDefinition("short_name")'
+            description:
+                type: MatrixFieldDefinition
+                description: 'Body of text.'
+                resolve: '@=value.getFieldDefinition("description")'
+            image:
+                type: BinaryFieldDefinition
+                description: 'Image for header'
+                resolve: '@=value.getFieldDefinition("image")'
+            name:
+                type: TextLineFieldDefinition
+                description: 'Name of place.'
+                resolve: '@=value.getFieldDefinition("name")'
+            metas:
+                type: MatrixFieldDefinition
+                description: 'Metas for Search Engine Optimizations'
+                resolve: '@=value.getFieldDefinition("metas")'

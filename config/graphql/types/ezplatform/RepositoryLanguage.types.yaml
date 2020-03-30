@@ -1,0 +1,16 @@
+RepositoryLanguage:
+    type: enum
+    config:
+        values:
+            eng-GB:
+                value: eng-GB
+                description: 'English (United Kingdom)'
+            fre-FR:
+                value: fre-FR
+                description: French
+            ger-DE:
+                value: ger-DE
+                description: German
+            nor-NO:
+                value: nor-NO
+                description: Norwegian

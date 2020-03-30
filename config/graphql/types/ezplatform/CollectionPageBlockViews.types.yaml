@@ -1,0 +1,7 @@
+CollectionPageBlockViews:
+    type: enum
+    config:
+        values:
+            default:
+                value: '@EzPlatformPageFieldType/blocks/collection.html.twig'
+                description: 'Default block layout'

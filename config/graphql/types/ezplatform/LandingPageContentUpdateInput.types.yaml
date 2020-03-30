@@ -1,0 +1,12 @@
+LandingPageContentUpdateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String
+                description: Title
+            description:
+                type: String
+                description: 'Landing page description'
+            page:
+                type: String

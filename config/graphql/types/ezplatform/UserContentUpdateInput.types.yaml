@@ -1,0 +1,21 @@
+UserContentUpdateInput:
+    type: input-object
+    config:
+        fields:
+            firstName:
+                type: String
+                description: 'First name here.'
+            lastName:
+                type: String
+                description: 'Last name here.'
+            userAccount:
+                type: String
+                description: 'Type here Account linked to the user.'
+            signature:
+                type: String
+                description: 'Body of text.'
+            image:
+                type: ImageFieldInput
+                description: 'Image of User.'
+            interests:
+                type: String

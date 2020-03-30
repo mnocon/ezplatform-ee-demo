@@ -1,0 +1,185 @@
+DomainGroupContent:
+    type: object
+    inherits:
+        - DomainContentTypeGroup
+    config:
+        fields:
+            _types:
+                type: DomainGroupContentTypes
+                resolve: {  }
+            abouts:
+                type: AboutContentConnection
+                description: 'No description available'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["about", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            about:
+                type: AboutContent
+                description: 'No description available'
+                resolve: '@=resolver("DomainContentItem", [args, "about"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the about' }
+                    remoteId: { type: String, description: 'Content remote ID of the about' }
+                    locationId: { type: Int, description: 'Location ID of the about' }
+            articles:
+                type: ArticleContentConnection
+                description: 'Article is to be used for storing single-page articles. Note: be careful, don''t use it for storing a case study, use the dedicated Case Study content type for that.'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["article", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            article:
+                type: ArticleContent
+                description: 'Article is to be used for storing single-page articles. Note: be careful, don''t use it for storing a case study, use the dedicated Case Study content type for that.'
+                resolve: '@=resolver("DomainContentItem", [args, "article"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the article' }
+                    remoteId: { type: String, description: 'Content remote ID of the article' }
+                    locationId: { type: Int, description: 'Location ID of the article' }
+            blogs:
+                type: BlogContentConnection
+                description: 'Defines a structure for storing blog posts (short articles by a single person and/or on a particular topic).'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["blog", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            blog:
+                type: BlogContent
+                description: 'Defines a structure for storing blog posts (short articles by a single person and/or on a particular topic).'
+                resolve: '@=resolver("DomainContentItem", [args, "blog"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the blog' }
+                    remoteId: { type: String, description: 'Content remote ID of the blog' }
+                    locationId: { type: Int, description: 'Location ID of the blog' }
+            blogPosts:
+                type: BlogPostContentConnection
+                description: 'These are individual blog posts and are created beneath Blog Content Types.'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["blog_post", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            blogPost:
+                type: BlogPostContent
+                description: 'These are individual blog posts and are created beneath Blog Content Types.'
+                resolve: '@=resolver("DomainContentItem", [args, "blog_post"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the blog_post' }
+                    remoteId: { type: String, description: 'Content remote ID of the blog_post' }
+                    locationId: { type: Int, description: 'Location ID of the blog_post' }
+            folders:
+                type: FolderContentConnection
+                description: 'A generic entity used to set up structures for storing content entities (articles, etc.).'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["folder", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            folder:
+                type: FolderContent
+                description: 'A generic entity used to set up structures for storing content entities (articles, etc.).'
+                resolve: '@=resolver("DomainContentItem", [args, "folder"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the folder' }
+                    remoteId: { type: String, description: 'Content remote ID of the folder' }
+                    locationId: { type: Int, description: 'Location ID of the folder' }
+            forms:
+                type: FormContentConnection
+                description: 'No description available'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["form", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            form:
+                type: FormContent
+                description: 'No description available'
+                resolve: '@=resolver("DomainContentItem", [args, "form"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the form' }
+                    remoteId: { type: String, description: 'Content remote ID of the form' }
+                    locationId: { type: Int, description: 'Location ID of the form' }
+            places:
+                type: PlaceContentConnection
+                description: 'Defines a structure for storing a Place object (includes Geolocation attribute).'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["place", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            place:
+                type: PlaceContent
+                description: 'Defines a structure for storing a Place object (includes Geolocation attribute).'
+                resolve: '@=resolver("DomainContentItem", [args, "place"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the place' }
+                    remoteId: { type: String, description: 'Content remote ID of the place' }
+                    locationId: { type: Int, description: 'Location ID of the place' }
+            products:
+                type: ProductContentConnection
+                description: 'No description available'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["product", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            product:
+                type: ProductContent
+                description: 'No description available'
+                resolve: '@=resolver("DomainContentItem", [args, "product"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the product' }
+                    remoteId: { type: String, description: 'Content remote ID of the product' }
+                    locationId: { type: Int, description: 'Location ID of the product' }
+            productLists:
+                type: ProductListContentConnection
+                description: 'No description available'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["product_list", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            productList:
+                type: ProductListContent
+                description: 'No description available'
+                resolve: '@=resolver("DomainContentItem", [args, "product_list"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the product_list' }
+                    remoteId: { type: String, description: 'Content remote ID of the product_list' }
+                    locationId: { type: Int, description: 'Location ID of the product_list' }
+            subscribes:
+                type: SubscribeContentConnection
+                description: 'No description available'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["subscribe", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            subscribe:
+                type: SubscribeContent
+                description: 'No description available'
+                resolve: '@=resolver("DomainContentItem", [args, "subscribe"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the subscribe' }
+                    remoteId: { type: String, description: 'Content remote ID of the subscribe' }
+                    locationId: { type: Int, description: 'Location ID of the subscribe' }
+            placeLists:
+                type: PlaceListContentConnection
+                description: 'Here you set up a structure for storing Place objects in it.'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["place_list", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            placeList:
+                type: PlaceListContent
+                description: 'Here you set up a structure for storing Place objects in it.'
+                resolve: '@=resolver("DomainContentItem", [args, "place_list"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the place_list' }
+                    remoteId: { type: String, description: 'Content remote ID of the place_list' }
+                    locationId: { type: Int, description: 'Location ID of the place_list' }

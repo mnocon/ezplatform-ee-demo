@@ -1,0 +1,22 @@
+ImageContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            name:
+                type: TextLineFieldDefinition
+                description: 'Name of file.'
+                resolve: '@=value.getFieldDefinition("name")'
+            caption:
+                type: MatrixFieldDefinition
+                description: 'Description of file that shows up on image.'
+                resolve: '@=value.getFieldDefinition("caption")'
+            image:
+                type: BinaryFieldDefinition
+                resolve: '@=value.getFieldDefinition("image")'
+            tags:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("tags")'

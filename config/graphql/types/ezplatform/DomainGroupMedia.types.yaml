@@ -1,0 +1,73 @@
+DomainGroupMedia:
+    type: object
+    inherits:
+        - DomainContentTypeGroup
+    config:
+        fields:
+            _types:
+                type: DomainGroupMediaTypes
+                resolve: {  }
+            files:
+                type: FileContentConnection
+                description: 'No description available'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["file", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            file:
+                type: FileContent
+                description: 'No description available'
+                resolve: '@=resolver("DomainContentItem", [args, "file"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the file' }
+                    remoteId: { type: String, description: 'Content remote ID of the file' }
+                    locationId: { type: Int, description: 'Location ID of the file' }
+            galleries:
+                type: GalleryContentConnection
+                description: 'Contains images for gallery'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["gallery", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            gallery:
+                type: GalleryContent
+                description: 'Contains images for gallery'
+                resolve: '@=resolver("DomainContentItem", [args, "gallery"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the gallery' }
+                    remoteId: { type: String, description: 'Content remote ID of the gallery' }
+                    locationId: { type: Int, description: 'Location ID of the gallery' }
+            images:
+                type: ImageContentConnection
+                description: 'No description available'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["image", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            image:
+                type: ImageContent
+                description: 'No description available'
+                resolve: '@=resolver("DomainContentItem", [args, "image"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the image' }
+                    remoteId: { type: String, description: 'Content remote ID of the image' }
+                    locationId: { type: Int, description: 'Location ID of the image' }
+            videoes:
+                type: VideoContentConnection
+                description: 'Defines a structure for storing video files. The Video content type is used to hold a file and a description of the file.'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["video", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            video:
+                type: VideoContent
+                description: 'Defines a structure for storing video files. The Video content type is used to hold a file and a description of the file.'
+                resolve: '@=resolver("DomainContentItem", [args, "video"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the video' }
+                    remoteId: { type: String, description: 'Content remote ID of the video' }
+                    locationId: { type: Int, description: 'Location ID of the video' }

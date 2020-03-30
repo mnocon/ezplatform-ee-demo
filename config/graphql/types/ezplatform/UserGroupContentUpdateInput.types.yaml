@@ -1,0 +1,10 @@
+UserGroupContentUpdateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String
+                description: 'Name of group.'
+            description:
+                type: String
+                description: 'Body of text.'

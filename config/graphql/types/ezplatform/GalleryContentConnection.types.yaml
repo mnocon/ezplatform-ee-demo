@@ -1,0 +1,6 @@
+GalleryContentConnection:
+    type: relay-connection
+    inherits:
+        - DomainContentByIdentifierConnection
+    config:
+        nodeType: GalleryContent

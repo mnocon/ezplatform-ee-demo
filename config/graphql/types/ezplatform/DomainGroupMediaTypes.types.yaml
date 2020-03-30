@@ -1,0 +1,16 @@
+DomainGroupMediaTypes:
+    type: object
+    config:
+        fields:
+            file:
+                type: FileContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "file"}])'
+            gallery:
+                type: GalleryContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "gallery"}])'
+            image:
+                type: ImageContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "image"}])'
+            video:
+                type: VideoContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "video"}])'

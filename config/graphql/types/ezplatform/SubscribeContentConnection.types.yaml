@@ -1,0 +1,6 @@
+SubscribeContentConnection:
+    type: relay-connection
+    inherits:
+        - DomainContentByIdentifierConnection
+    config:
+        nodeType: SubscribeContent

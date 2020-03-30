@@ -1,0 +1,15 @@
+GalleryContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            name:
+                type: TextLineFieldDefinition
+                description: 'gallery name'
+                resolve: '@=value.getFieldDefinition("name")'
+            description:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("description")'

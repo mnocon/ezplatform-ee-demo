@@ -1,0 +1,6 @@
+PlaceListContentConnection:
+    type: relay-connection
+    inherits:
+        - DomainContentByIdentifierConnection
+    config:
+        nodeType: PlaceListContent

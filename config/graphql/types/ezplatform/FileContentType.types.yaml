@@ -1,0 +1,22 @@
+FileContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            name:
+                type: TextLineFieldDefinition
+                description: 'Name of file.'
+                resolve: '@=value.getFieldDefinition("name")'
+            description:
+                type: MatrixFieldDefinition
+                description: 'Description of file.'
+                resolve: '@=value.getFieldDefinition("description")'
+            file:
+                type: BinaryFieldDefinition
+                resolve: '@=value.getFieldDefinition("file")'
+            tags:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("tags")'

@@ -1,0 +1,6 @@
+LandingPageContentConnection:
+    type: relay-connection
+    inherits:
+        - DomainContentByIdentifierConnection
+    config:
+        nodeType: LandingPageContent

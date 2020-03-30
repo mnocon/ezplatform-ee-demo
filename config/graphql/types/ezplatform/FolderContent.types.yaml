@@ -1,0 +1,33 @@
+FolderContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            name:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "name"])'
+            shortName:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "short_name"])'
+            shortDescription:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "short_description"])'
+            description:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "description"])'
+            image:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "image"])'
+            showChildren:
+                type: Boolean
+                resolve: '@=resolver("DomainFieldValue", [value, "show_children"]).bool'
+            tags:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "tags"])'
+            metas:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "metas"])'

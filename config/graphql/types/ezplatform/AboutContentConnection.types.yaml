@@ -1,0 +1,6 @@
+AboutContentConnection:
+    type: relay-connection
+    inherits:
+        - DomainContentByIdentifierConnection
+    config:
+        nodeType: AboutContent

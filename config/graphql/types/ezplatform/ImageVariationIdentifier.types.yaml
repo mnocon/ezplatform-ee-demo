@@ -1,0 +1,19 @@
+ImageVariationIdentifier:
+    type: enum
+    config:
+        values:
+            reference: {  }
+            small: {  }
+            tiny: {  }
+            medium: {  }
+            large: {  }
+            gallery: {  }
+            ezplatform_admin_ui_profile_picture_user_menu: {  }
+            article_full_width: {  }
+            search_result_item: {  }
+            search_result_item_large: {  }
+            product_large: {  }
+            product_card: {  }
+            embed-header: {  }
+            place: {  }
+            card_view: {  }

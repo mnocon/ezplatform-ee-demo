@@ -1,0 +1,50 @@
+PlaceContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            name:
+                type: TextLineFieldDefinition
+                description: 'Name of place.'
+                resolve: '@=value.getFieldDefinition("name")'
+            intro:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("intro")'
+            description:
+                type: MatrixFieldDefinition
+                description: 'Body of text.'
+                resolve: '@=value.getFieldDefinition("description")'
+            image:
+                type: BinaryFieldDefinition
+                description: 'Image representing the gallery on frontpages and other listing pages.'
+                resolve: '@=value.getFieldDefinition("image")'
+            caption:
+                type: MatrixFieldDefinition
+                description: 'Text you want to display beneath the image.'
+                resolve: '@=value.getFieldDefinition("caption")'
+            location:
+                type: MatrixFieldDefinition
+                description: 'Geolocation associated to the Place, for instance, where the story happened.'
+                resolve: '@=value.getFieldDefinition("location")'
+            author:
+                type: MatrixFieldDefinition
+                description: 'Place author'
+                resolve: '@=value.getFieldDefinition("author")'
+            authorsPosition:
+                type: TextLineFieldDefinition
+                description: 'Position of author'
+                resolve: '@=value.getFieldDefinition("authors_position")'
+            tags:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("tags")'
+            publicationDate:
+                type: MatrixFieldDefinition
+                description: 'Date of publication'
+                resolve: '@=value.getFieldDefinition("publication_date")'
+            metas:
+                type: MatrixFieldDefinition
+                description: 'Metas for Search Engine Optimizations'
+                resolve: '@=value.getFieldDefinition("metas")'

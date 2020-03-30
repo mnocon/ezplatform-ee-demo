@@ -1,0 +1,12 @@
+TastesPageBlock:
+    type: object
+    inherits:
+        - BasePageBlock
+    config:
+        fields:
+            contentId:
+                type: DomainContent
+                resolve: '@=resolver("EmbedAttributeValue", [value.getAttribute("contentId").getValue()])'
+            limit:
+                type: Int
+                resolve: '@=value.getAttribute("limit").getValue()'

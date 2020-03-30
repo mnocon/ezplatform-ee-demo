@@ -1,0 +1,40 @@
+ArticleContentUpdateInput:
+    type: input-object
+    config:
+        fields:
+            title:
+                type: String
+                description: 'Will be shown at the top of article pages.'
+            shortTitle:
+                type: String
+                description: 'It is used in the listing page and in the Menu.'
+            intro:
+                type: RichTextFieldInput
+                description: 'Shown at the Schedule block view.'
+            body:
+                type: RichTextFieldInput
+                description: 'Content of the article.'
+            image:
+                type: ImageFieldInput
+                description: 'Image representing the gallery on frontpages and other listing pages.'
+            caption:
+                type: RichTextFieldInput
+                description: 'Text you want to display beneath the image.'
+            location:
+                type: MapLocationFieldInput
+                description: 'Geolocation associated to the article, for instance, the place where the story happened.'
+            authorsPosition:
+                type: String
+                description: 'Position of author'
+            relatedArticles:
+                type: '[Int]'
+            premiumContent:
+                type: Boolean
+            author:
+                type: '[AuthorInput]'
+                description: 'Text is displayed under Article''s title.'
+            publishDate:
+                type: DateFieldInput
+                description: 'Schedule here the date when this article is published.'
+            tags:
+                type: String

@@ -1,0 +1,15 @@
+ProductListContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            title:
+                type: String!
+            shortTitle:
+                type: String!
+            banner:
+                type: ImageFieldInput
+            description:
+                type: RichTextFieldInput
+            metas:
+                type: String
+                description: 'Metas for Search Engine Optimizations'

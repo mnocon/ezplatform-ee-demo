@@ -1,0 +1,13 @@
+FormContentUpdateInput:
+    type: input-object
+    config:
+        fields:
+            title:
+                type: String
+                description: Title
+            description:
+                type: RichTextFieldInput
+                description: Description
+            form:
+                type: String
+                description: Form

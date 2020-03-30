@@ -1,0 +1,15 @@
+AboutContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            title:
+                type: String
+            image:
+                type: ImageFieldInput
+            leftColumn:
+                type: RichTextFieldInput
+            rightColumn:
+                type: RichTextFieldInput
+            metas:
+                type: String
+                description: 'Metas for Search Engine Optimizations'

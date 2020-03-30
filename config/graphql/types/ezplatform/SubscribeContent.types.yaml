@@ -1,0 +1,21 @@
+SubscribeContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            image:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "image"])'
+            title:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "title"])'
+            description:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "description"])'
+            metas:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "metas"])'

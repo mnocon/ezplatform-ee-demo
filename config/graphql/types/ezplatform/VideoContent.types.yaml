@@ -1,0 +1,21 @@
+VideoContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            name:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "name"])'
+            caption:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "caption"])'
+            file:
+                type: MediaFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "file"])'
+            thumbnail:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "thumbnail"])'

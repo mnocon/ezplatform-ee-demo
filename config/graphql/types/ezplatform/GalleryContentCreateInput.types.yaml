@@ -1,0 +1,9 @@
+GalleryContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String!
+                description: 'gallery name'
+            description:
+                type: String

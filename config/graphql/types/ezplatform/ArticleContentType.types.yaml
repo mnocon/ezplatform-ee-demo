@@ -1,0 +1,57 @@
+ArticleContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            title:
+                type: TextLineFieldDefinition
+                description: 'Will be shown at the top of article pages.'
+                resolve: '@=value.getFieldDefinition("title")'
+            shortTitle:
+                type: TextLineFieldDefinition
+                description: 'It is used in the listing page and in the Menu.'
+                resolve: '@=value.getFieldDefinition("short_title")'
+            intro:
+                type: MatrixFieldDefinition
+                description: 'Shown at the Schedule block view.'
+                resolve: '@=value.getFieldDefinition("intro")'
+            body:
+                type: MatrixFieldDefinition
+                description: 'Content of the article.'
+                resolve: '@=value.getFieldDefinition("body")'
+            image:
+                type: BinaryFieldDefinition
+                description: 'Image representing the gallery on frontpages and other listing pages.'
+                resolve: '@=value.getFieldDefinition("image")'
+            caption:
+                type: MatrixFieldDefinition
+                description: 'Text you want to display beneath the image.'
+                resolve: '@=value.getFieldDefinition("caption")'
+            location:
+                type: MatrixFieldDefinition
+                description: 'Geolocation associated to the article, for instance, the place where the story happened.'
+                resolve: '@=value.getFieldDefinition("location")'
+            authorsPosition:
+                type: TextLineFieldDefinition
+                description: 'Position of author'
+                resolve: '@=value.getFieldDefinition("authors_position")'
+            relatedArticles:
+                type: RelationListFieldDefinition
+                resolve: '@=value.getFieldDefinition("related_articles")'
+            premiumContent:
+                type: CheckboxFieldDefinition
+                resolve: '@=value.getFieldDefinition("premium_content")'
+            author:
+                type: MatrixFieldDefinition
+                description: 'Text is displayed under Article''s title.'
+                resolve: '@=value.getFieldDefinition("author")'
+            publishDate:
+                type: MatrixFieldDefinition
+                description: 'Schedule here the date when this article is published.'
+                resolve: '@=value.getFieldDefinition("publish_date")'
+            tags:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("tags")'

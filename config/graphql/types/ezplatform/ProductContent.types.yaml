@@ -1,0 +1,54 @@
+ProductContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            title:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "title"])'
+            description:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "description"])'
+            cookingInstructions:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "cooking_instructions"])'
+            ingredients:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "ingredients"])'
+            image:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "image"])'
+            price:
+                type: Float
+                resolve: '@=resolver("DomainFieldValue", [value, "price"]).value'
+            serving:
+                type: Int
+                resolve: '@=resolver("DomainFieldValue", [value, "serving"]).value'
+            spicy:
+                type: String
+                resolve: '@=resolver("SelectionFieldValue", [resolver("DomainFieldValue", [value, "spicy"]), value])'
+            dairy:
+                type: Boolean
+                resolve: '@=resolver("DomainFieldValue", [value, "dairy"]).bool'
+            egg:
+                type: Boolean
+                resolve: '@=resolver("DomainFieldValue", [value, "egg"]).bool'
+            nuts:
+                type: Boolean
+                resolve: '@=resolver("DomainFieldValue", [value, "nuts"]).bool'
+            seafood:
+                type: Boolean
+                resolve: '@=resolver("DomainFieldValue", [value, "seafood"]).bool'
+            gluten:
+                type: Boolean
+                resolve: '@=resolver("DomainFieldValue", [value, "gluten"]).bool'
+            tags:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "tags"])'
+            metas:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "metas"])'

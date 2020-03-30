@@ -1,0 +1,6 @@
+FormContentConnection:
+    type: relay-connection
+    inherits:
+        - DomainContentByIdentifierConnection
+    config:
+        nodeType: FormContent

@@ -1,0 +1,39 @@
+FolderContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            name:
+                type: TextLineFieldDefinition
+                description: 'Title shown on website.'
+                resolve: '@=value.getFieldDefinition("name")'
+            shortName:
+                type: TextLineFieldDefinition
+                description: 'Descriptive title, non displayed.'
+                resolve: '@=value.getFieldDefinition("short_name")'
+            shortDescription:
+                type: MatrixFieldDefinition
+                description: 'Displayed as a separate paragraph at top.'
+                resolve: '@=value.getFieldDefinition("short_description")'
+            description:
+                type: MatrixFieldDefinition
+                description: 'Body of text.'
+                resolve: '@=value.getFieldDefinition("description")'
+            image:
+                type: BinaryFieldDefinition
+                description: 'Image for header.'
+                resolve: '@=value.getFieldDefinition("image")'
+            showChildren:
+                type: CheckboxFieldDefinition
+                description: 'If checked folder items displayed.'
+                resolve: '@=value.getFieldDefinition("show_children")'
+            tags:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("tags")'
+            metas:
+                type: MatrixFieldDefinition
+                description: 'Metas for Search Engine Optimizations'
+                resolve: '@=value.getFieldDefinition("metas")'

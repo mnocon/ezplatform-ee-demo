@@ -1,0 +1,42 @@
+BlogPostContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            title:
+                type: TextLineFieldDefinition
+                description: 'Shown at the top of blog post.'
+                resolve: '@=value.getFieldDefinition("title")'
+            intro:
+                type: MatrixFieldDefinition
+                description: 'Shown at the Schedule block view.'
+                resolve: '@=value.getFieldDefinition("intro")'
+            body:
+                type: MatrixFieldDefinition
+                description: 'Content of the blog post.'
+                resolve: '@=value.getFieldDefinition("body")'
+            image:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("image")'
+            publicationDate:
+                type: MatrixFieldDefinition
+                description: 'Schedule here the date when this blog post is published.'
+                resolve: '@=value.getFieldDefinition("publication_date")'
+            author:
+                type: MatrixFieldDefinition
+                description: 'Blog post author'
+                resolve: '@=value.getFieldDefinition("author")'
+            authorsPosition:
+                type: TextLineFieldDefinition
+                description: 'Position of author'
+                resolve: '@=value.getFieldDefinition("authors_position")'
+            tags:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("tags")'
+            metas:
+                type: MatrixFieldDefinition
+                description: 'Metas for Search Engine Optimizations'
+                resolve: '@=value.getFieldDefinition("metas")'

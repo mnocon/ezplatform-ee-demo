@@ -1,0 +1,26 @@
+BlogContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            name:
+                type: TextLineFieldDefinition
+                description: 'Name or title of the blog.'
+                resolve: '@=value.getFieldDefinition("name")'
+            image:
+                type: BinaryFieldDefinition
+                resolve: '@=value.getFieldDefinition("image")'
+            description:
+                type: MatrixFieldDefinition
+                description: 'Brief description of blog.'
+                resolve: '@=value.getFieldDefinition("description")'
+            tags:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("tags")'
+            metas:
+                type: MatrixFieldDefinition
+                description: 'Metas for Search Engine Optimizations'
+                resolve: '@=value.getFieldDefinition("metas")'

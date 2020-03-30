@@ -1,0 +1,21 @@
+SubscribeContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            image:
+                type: BinaryFieldDefinition
+                resolve: '@=value.getFieldDefinition("image")'
+            title:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("title")'
+            description:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("description")'
+            metas:
+                type: MatrixFieldDefinition
+                description: 'Metas for Search Engine Optimizations'
+                resolve: '@=value.getFieldDefinition("metas")'

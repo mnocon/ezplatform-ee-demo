@@ -1,0 +1,12 @@
+HeroPageBlock:
+    type: object
+    inherits:
+        - BasePageBlock
+    config:
+        fields:
+            text:
+                type: String
+                resolve: '@=value.getAttribute("text").getValue()'
+            contentId:
+                type: DomainContent
+                resolve: '@=resolver("EmbedAttributeValue", [value.getAttribute("contentId").getValue()])'

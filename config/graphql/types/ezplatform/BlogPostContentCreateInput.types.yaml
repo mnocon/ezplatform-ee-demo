@@ -1,0 +1,29 @@
+BlogPostContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            title:
+                type: String!
+                description: 'Shown at the top of blog post.'
+            intro:
+                type: RichTextFieldInput
+                description: 'Shown at the Schedule block view.'
+            body:
+                type: RichTextFieldInput!
+                description: 'Content of the blog post.'
+            image:
+                type: String
+            publicationDate:
+                type: DateFieldInput
+                description: 'Schedule here the date when this blog post is published.'
+            author:
+                type: '[AuthorInput]'
+                description: 'Blog post author'
+            authorsPosition:
+                type: String
+                description: 'Position of author'
+            tags:
+                type: String
+            metas:
+                type: String
+                description: 'Metas for Search Engine Optimizations'

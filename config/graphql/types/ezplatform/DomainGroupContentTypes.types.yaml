@@ -1,0 +1,37 @@
+DomainGroupContentTypes:
+    type: object
+    config:
+        fields:
+            about:
+                type: AboutContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "about"}])'
+            article:
+                type: ArticleContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "article"}])'
+            blog:
+                type: BlogContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "blog"}])'
+            blogPost:
+                type: BlogPostContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "blog_post"}])'
+            folder:
+                type: FolderContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "folder"}])'
+            form:
+                type: FormContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "form"}])'
+            place:
+                type: PlaceContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "place"}])'
+            product:
+                type: ProductContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "product"}])'
+            productList:
+                type: ProductListContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "product_list"}])'
+            subscribe:
+                type: SubscribeContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "subscribe"}])'
+            placeList:
+                type: PlaceListContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "place_list"}])'

@@ -1,0 +1,6 @@
+VideoContentConnection:
+    type: relay-connection
+    inherits:
+        - DomainContentByIdentifierConnection
+    config:
+        nodeType: VideoContent

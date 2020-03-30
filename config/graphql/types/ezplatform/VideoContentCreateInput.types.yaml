@@ -1,0 +1,14 @@
+VideoContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String
+                description: 'Name of file.'
+            caption:
+                type: RichTextFieldInput
+                description: 'Description of file.'
+            file:
+                type: MediaFieldInput
+            thumbnail:
+                type: ImageFieldInput

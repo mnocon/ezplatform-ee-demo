@@ -1,0 +1,36 @@
+BlogPostContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            title:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "title"])'
+            intro:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "intro"])'
+            body:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "body"])'
+            image:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainImageAssetFieldValue", [resolver("DomainFieldValue", [value, "image"])])'
+            publicationDate:
+                type: DateTime
+                resolve: '@=resolver("DomainFieldValue", [value, "publication_date"]).value'
+            author:
+                type: '[AuthorFieldValue]'
+                resolve: '@=resolver("DomainFieldValue", [value, "author"]).authors'
+            authorsPosition:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "authors_position"])'
+            tags:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "tags"])'
+            metas:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "metas"])'

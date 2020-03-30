@@ -1,0 +1,25 @@
+DomainGroupPages:
+    type: object
+    inherits:
+        - DomainContentTypeGroup
+    config:
+        fields:
+            _types:
+                type: DomainGroupPagesTypes
+                resolve: {  }
+            landingPages:
+                type: LandingPageContentConnection
+                description: 'No description available'
+                resolve: '@=resolver("SearchContentOfTypeAsConnection", ["landing_page", args])'
+                argsBuilder: 'Relay::Connection'
+                args:
+                    query: { type: ContentSearchQuery, description: 'A Content query used to filter results' }
+                    sortBy: { type: '[SortByOptions]', description: 'A Sort Clause, or array of Clauses. Add _desc after a Clause to reverse it' }
+            landingPage:
+                type: LandingPageContent
+                description: 'No description available'
+                resolve: '@=resolver("DomainContentItem", [args, "landing_page"])'
+                args:
+                    id: { type: Int, description: 'Content ID of the landing_page' }
+                    remoteId: { type: String, description: 'Content remote ID of the landing_page' }
+                    locationId: { type: Int, description: 'Location ID of the landing_page' }

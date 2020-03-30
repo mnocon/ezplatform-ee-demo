@@ -1,0 +1,24 @@
+BlogContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            name:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "name"])'
+            image:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "image"])'
+            description:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "description"])'
+            tags:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "tags"])'
+            metas:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "metas"])'

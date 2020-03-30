@@ -1,0 +1,17 @@
+BlogContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String
+                description: 'Name or title of the blog.'
+            image:
+                type: ImageFieldInput
+            description:
+                type: RichTextFieldInput
+                description: 'Brief description of blog.'
+            tags:
+                type: String
+            metas:
+                type: String
+                description: 'Metas for Search Engine Optimizations'

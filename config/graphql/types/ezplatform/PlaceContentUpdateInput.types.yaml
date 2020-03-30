@@ -1,0 +1,35 @@
+PlaceContentUpdateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String
+                description: 'Name of place.'
+            intro:
+                type: RichTextFieldInput
+            description:
+                type: RichTextFieldInput
+                description: 'Body of text.'
+            image:
+                type: ImageFieldInput
+                description: 'Image representing the gallery on frontpages and other listing pages.'
+            caption:
+                type: RichTextFieldInput
+                description: 'Text you want to display beneath the image.'
+            location:
+                type: MapLocationFieldInput
+                description: 'Geolocation associated to the Place, for instance, where the story happened.'
+            author:
+                type: '[AuthorInput]'
+                description: 'Place author'
+            authorsPosition:
+                type: String
+                description: 'Position of author'
+            tags:
+                type: String
+            publicationDate:
+                type: DateFieldInput
+                description: 'Date of publication'
+            metas:
+                type: String
+                description: 'Metas for Search Engine Optimizations'

@@ -1,0 +1,24 @@
+AboutContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            title:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("title")'
+            image:
+                type: BinaryFieldDefinition
+                resolve: '@=value.getFieldDefinition("image")'
+            leftColumn:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("left_column")'
+            rightColumn:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("right_column")'
+            metas:
+                type: MatrixFieldDefinition
+                description: 'Metas for Search Engine Optimizations'
+                resolve: '@=value.getFieldDefinition("metas")'

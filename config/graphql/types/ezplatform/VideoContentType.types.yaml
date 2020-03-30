@@ -1,0 +1,22 @@
+VideoContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            name:
+                type: TextLineFieldDefinition
+                description: 'Name of file.'
+                resolve: '@=value.getFieldDefinition("name")'
+            caption:
+                type: MatrixFieldDefinition
+                description: 'Description of file.'
+                resolve: '@=value.getFieldDefinition("caption")'
+            file:
+                type: MediaFieldDefinition
+                resolve: '@=value.getFieldDefinition("file")'
+            thumbnail:
+                type: BinaryFieldDefinition
+                resolve: '@=value.getFieldDefinition("thumbnail")'

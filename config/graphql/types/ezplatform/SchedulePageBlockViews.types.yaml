@@ -1,0 +1,7 @@
+SchedulePageBlockViews:
+    type: enum
+    config:
+        values:
+            default:
+                value: '@EzPlatformPageFieldType/blocks/schedule.html.twig'
+                description: 'Default block layout'

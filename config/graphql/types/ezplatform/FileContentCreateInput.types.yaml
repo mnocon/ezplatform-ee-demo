@@ -1,0 +1,14 @@
+FileContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String!
+                description: 'Name of file.'
+            description:
+                type: RichTextFieldInput
+                description: 'Description of file.'
+            file:
+                type: BinaryFieldInput!
+            tags:
+                type: String

@@ -1,0 +1,19 @@
+PlaceListContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            shortName:
+                type: String
+                description: 'Short description.'
+            description:
+                type: RichTextFieldInput
+                description: 'Body of text.'
+            image:
+                type: ImageFieldInput
+                description: 'Image for header'
+            name:
+                type: String
+                description: 'Name of place.'
+            metas:
+                type: String
+                description: 'Metas for Search Engine Optimizations'

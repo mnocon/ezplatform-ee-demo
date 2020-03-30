@@ -1,0 +1,40 @@
+ContentTypeIdentifier:
+    type: enum
+    config:
+        values:
+            about:
+                description: 'No description available'
+            article:
+                description: 'Article is to be used for storing single-page articles. Note: be careful, don''t use it for storing a case study, use the dedicated Case Study content type for that.'
+            blog:
+                description: 'Defines a structure for storing blog posts (short articles by a single person and/or on a particular topic).'
+            blog_post:
+                description: 'These are individual blog posts and are created beneath Blog Content Types.'
+            folder:
+                description: 'A generic entity used to set up structures for storing content entities (articles, etc.).'
+            form:
+                description: 'No description available'
+            place:
+                description: 'Defines a structure for storing a Place object (includes Geolocation attribute).'
+            product:
+                description: 'No description available'
+            product_list:
+                description: 'No description available'
+            subscribe:
+                description: 'No description available'
+            place_list:
+                description: 'Here you set up a structure for storing Place objects in it.'
+            user:
+                description: 'Defines a structure for storing user accounts. Typically used by administrators for managing users.'
+            user_group:
+                description: 'Define here a structure for storing a user group.'
+            file:
+                description: 'No description available'
+            gallery:
+                description: 'Contains images for gallery'
+            image:
+                description: 'No description available'
+            video:
+                description: 'Defines a structure for storing video files. The Video content type is used to hold a file and a description of the file.'
+            landing_page:
+                description: 'No description available'

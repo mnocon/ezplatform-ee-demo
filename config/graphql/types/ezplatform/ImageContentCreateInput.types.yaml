@@ -1,0 +1,14 @@
+ImageContentCreateInput:
+    type: input-object
+    config:
+        fields:
+            name:
+                type: String!
+                description: 'Name of file.'
+            caption:
+                type: RichTextFieldInput
+                description: 'Description of file that shows up on image.'
+            image:
+                type: ImageFieldInput
+            tags:
+                type: String

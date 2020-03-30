@@ -1,0 +1,54 @@
+ProductContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            title:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("title")'
+            description:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("description")'
+            cookingInstructions:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("cooking_instructions")'
+            ingredients:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("ingredients")'
+            image:
+                type: BinaryFieldDefinition
+                resolve: '@=value.getFieldDefinition("image")'
+            price:
+                type: FloatFieldDefinition
+                resolve: '@=value.getFieldDefinition("price")'
+            serving:
+                type: IntegerFieldDefinition
+                resolve: '@=value.getFieldDefinition("serving")'
+            spicy:
+                type: SelectionFieldDefinition
+                resolve: '@=value.getFieldDefinition("spicy")'
+            dairy:
+                type: CheckboxFieldDefinition
+                resolve: '@=value.getFieldDefinition("dairy")'
+            egg:
+                type: CheckboxFieldDefinition
+                resolve: '@=value.getFieldDefinition("egg")'
+            nuts:
+                type: CheckboxFieldDefinition
+                resolve: '@=value.getFieldDefinition("nuts")'
+            seafood:
+                type: CheckboxFieldDefinition
+                resolve: '@=value.getFieldDefinition("seafood")'
+            gluten:
+                type: CheckboxFieldDefinition
+                resolve: '@=value.getFieldDefinition("gluten")'
+            tags:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("tags")'
+            metas:
+                type: MatrixFieldDefinition
+                description: 'Metas for Search Engine Optimizations'
+                resolve: '@=value.getFieldDefinition("metas")'

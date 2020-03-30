@@ -1,0 +1,24 @@
+PlaceListContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            shortName:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "short_name"])'
+            description:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "description"])'
+            image:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "image"])'
+            name:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "name"])'
+            metas:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "metas"])'

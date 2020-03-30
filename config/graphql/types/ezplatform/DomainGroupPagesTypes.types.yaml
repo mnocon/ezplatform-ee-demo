@@ -1,0 +1,7 @@
+DomainGroupPagesTypes:
+    type: object
+    config:
+        fields:
+            landingPage:
+                type: LandingPageContentType
+                resolve: '@=resolver("ContentType", [{"identifier": "landing_page"}])'

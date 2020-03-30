@@ -1,0 +1,32 @@
+PageBlocksList:
+    type: enum
+    config:
+        values:
+            form:
+                value: FormPageBlock
+            tag:
+                value: TagPageBlock
+            contentlist:
+                value: ContentlistPageBlock
+            banner:
+                value: BannerPageBlock
+            collection:
+                value: CollectionPageBlock
+            embed:
+                value: EmbedPageBlock
+            gallery:
+                value: GalleryPageBlock
+            video:
+                value: VideoPageBlock
+            rss:
+                value: RssPageBlock
+            schedule:
+                value: SchedulePageBlock
+            richtext:
+                value: RichtextPageBlock
+            hero:
+                value: HeroPageBlock
+            places:
+                value: PlacesPageBlock
+            tastes:
+                value: TastesPageBlock

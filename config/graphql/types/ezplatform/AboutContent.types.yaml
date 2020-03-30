@@ -1,0 +1,24 @@
+AboutContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            title:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "title"])'
+            image:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "image"])'
+            leftColumn:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "left_column"])'
+            rightColumn:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "right_column"])'
+            metas:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "metas"])'

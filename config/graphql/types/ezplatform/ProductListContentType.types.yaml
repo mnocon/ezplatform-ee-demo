@@ -1,0 +1,24 @@
+ProductListContentType:
+    type: object
+    inherits:
+        - BaseDomainContentType
+    config:
+        interfaces:
+            - DomainContentType
+        fields:
+            title:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("title")'
+            shortTitle:
+                type: TextLineFieldDefinition
+                resolve: '@=value.getFieldDefinition("short_title")'
+            banner:
+                type: BinaryFieldDefinition
+                resolve: '@=value.getFieldDefinition("banner")'
+            description:
+                type: MatrixFieldDefinition
+                resolve: '@=value.getFieldDefinition("description")'
+            metas:
+                type: MatrixFieldDefinition
+                description: 'Metas for Search Engine Optimizations'
+                resolve: '@=value.getFieldDefinition("metas")'

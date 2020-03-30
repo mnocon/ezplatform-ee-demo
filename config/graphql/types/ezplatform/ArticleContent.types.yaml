@@ -1,0 +1,48 @@
+ArticleContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            title:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "title"])'
+            shortTitle:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "short_title"])'
+            intro:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "intro"])'
+            body:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "body"])'
+            image:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "image"])'
+            caption:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "caption"])'
+            location:
+                type: MapLocationFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "location"])'
+            authorsPosition:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "authors_position"])'
+            relatedArticles:
+                type: '[DomainContent]'
+                resolve: '@=resolver("DomainRelationFieldValue", [resolver("DomainFieldValue", [value, "related_articles"]), true])'
+            premiumContent:
+                type: Boolean
+                resolve: '@=resolver("DomainFieldValue", [value, "premium_content"]).bool'
+            author:
+                type: '[AuthorFieldValue]'
+                resolve: '@=resolver("DomainFieldValue", [value, "author"]).authors'
+            publishDate:
+                type: DateTime
+                resolve: '@=resolver("DomainFieldValue", [value, "publish_date"]).value'
+            tags:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "tags"])'

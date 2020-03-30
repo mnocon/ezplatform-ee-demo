@@ -1,0 +1,7 @@
+ContentlistPageBlockViews:
+    type: enum
+    config:
+        values:
+            default:
+                value: '@EzPlatformPageFieldType/blocks/contentlist.html.twig'
+                description: 'Default block layout'

@@ -1,0 +1,42 @@
+PlaceContent:
+    type: object
+    inherits:
+        - AbstractDomainContent
+    config:
+        interfaces:
+            - DomainContent
+            - Node
+        fields:
+            name:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "name"])'
+            intro:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "intro"])'
+            description:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "description"])'
+            image:
+                type: ImageFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "image"])'
+            caption:
+                type: RichTextFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "caption"])'
+            location:
+                type: MapLocationFieldValue
+                resolve: '@=resolver("DomainFieldValue", [value, "location"])'
+            author:
+                type: '[AuthorFieldValue]'
+                resolve: '@=resolver("DomainFieldValue", [value, "author"]).authors'
+            authorsPosition:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "authors_position"])'
+            tags:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "tags"])'
+            publicationDate:
+                type: DateTime
+                resolve: '@=resolver("DomainFieldValue", [value, "publication_date"]).value'
+            metas:
+                type: String
+                resolve: '@=resolver("DomainFieldValue", [value, "metas"])'
