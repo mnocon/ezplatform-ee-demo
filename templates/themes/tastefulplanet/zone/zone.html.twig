@@ -2,8 +2,7 @@
 
 {% for block in blocks %}
     <div class="landing-page__block" data-ez-block-id="{{ block.id }}">
-        {{ render_esi(controller('EzPlatformPageFieldTypeBundle:Block:render', {
-            'locationId': locationId,
+        {{ render_esi(controller('EzSystems\\EzPlatformPageFieldTypeBundle\\Controller\\BlockController::renderAction', {            'locationId': locationId,
             'contentId': contentInfo.id,
             'blockId': block.id,
             'versionNo': versionInfo.versionNo,
