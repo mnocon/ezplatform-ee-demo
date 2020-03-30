@@ -1,4 +1,4 @@
-ezpublish:
+ezplatform:
     system:
         admin_group:
             field_templates:

@@ -5,16 +5,14 @@
  */
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Templating\EngineInterface;
 use eZ\Publish\API\Repository\SearchService;
 use App\QueryType\MenuQueryType;
 use Twig\Environment;
 
-class MenuController
+class MenuController extends AbstractController
 {
-    protected $templating;
-
     /** @var \eZ\Publish\API\Repository\SearchService */
     protected $searchService;
 
@@ -28,13 +26,11 @@ class MenuController
     protected $topMenuContentTypeIdentifier;
 
     public function __construct(
-        Environment $templating,
         SearchService $searchService,
         MenuQueryType $menuQueryType,
         $topMenuParentLocationId,
         $topMenuContentTypeIdentifier
     ) {
-        $this->templating = $templating;
         $this->searchService = $searchService;
         $this->menuQueryType = $menuQueryType;
         $this->topMenuParentLocationId = $topMenuParentLocationId;
@@ -49,7 +45,7 @@ class MenuController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getChildNodesAction($template, $pathString = null)
+    public function getChildNodesAction($template, $pathString = '')
     {
         $query = $this->menuQueryType->getQuery([
             'parent_location_id' => $this->topMenuParentLocationId,
@@ -65,14 +61,20 @@ class MenuController
 
         $pathArray = $pathString ? explode("/", $pathString) : [];
 
-        $response = new Response();
-        $response->setVary('X-User-Hash');
-
-        return $this->templating->renderResponse(
+        $content = '';
+        $content = $this->renderView(
             $template, [
                 'menuItems' => $menuItems,
-                'pathArray' => $pathArray,
-            ], $response
+                'pathArray' => $pathString,
+            ]
         );
+
+//        $response = new Response();
+//        $response->setVary('X-User-Hash');
+//
+//        return $response;
+
+        return new Response(sprintf('<div>%s, %s, %s</div>', $content, $template, $pathString), 200);
+
     }
 }

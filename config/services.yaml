@@ -19,7 +19,7 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/*'
-        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+        exclude: '../src/{Controller,DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
 
     app.query_type.menu:
         class: App\QueryType\MenuQueryType
@@ -103,3 +103,18 @@ services:
     App\Event\Subscriber\Recommendation\UserCollectionSubscriber:
         arguments:
             $membersUserGroupId: '%app.members_user_group_id%'
+
+    ezpublish.fieldType.novaseometas:
+        class: eZ\Publish\Core\FieldType\Null\Type
+        autowire: true
+        autoconfigure: false
+        arguments: [novaseometas]
+        tags: [{name: ezplatform.field_type, alias: novaseometas}]
+
+    ezpublish.fieldType.novaseometas.converter:
+        class: eZ\Publish\Core\Persistence\Legacy\Content\FieldValue\Converter\NullConverter
+        tags: [{name: ezplatform.field_type.legacy_storage.converter, alias: novaseometas}]
+
+    ezpublish.fieldType.novaseometas.indexable:
+        class: '%ezpublish.fieldType.indexable.unindexed.class%'
+        tags: [{name: ezplatform.field_type.indexable, alias: novaseometas}]

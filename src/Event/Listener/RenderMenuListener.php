@@ -53,7 +53,7 @@ class RenderMenuListener
         $manipulator = new MenuManipulator();
 
         $this->configureEzTags($menu, $manipulator);
-        $this->configurePersonalization($menu, $manipulator);
+//        $this->configurePersonalization($menu, $manipulator);
     }
 
     /**

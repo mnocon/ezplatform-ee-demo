@@ -1,4 +1,4 @@
-ezpublish:
+ezplatform:
     system:
         site_group:
             pagelayout: "@ezdesign/pagelayout.html.twig"
