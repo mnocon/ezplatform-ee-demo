@@ -157,6 +157,8 @@ hooks:
         # So in development it might be convenient to rebuild indexes, slowing down deploy time
         ##php bin/console ezplatform:reindex --processes=auto
 
+        mv images public/var/site/storage/
+
     # Post deploy hook, like deploy but after being deployed and live, for deploy tasks we can do asynchronously
     #post_deploy: |
     #    set -e
