@@ -46,7 +46,7 @@ variables:
         TRUSTED_PROXIES: "TRUST_REMOTE"
         # Change this if you use a different env than "prod"
         # If you change to "dev" remove "--no-dev" from the `composer install` command.
-        APP_ENV: prod
+        APP_ENV: dev
         # Uncomment if you want to use DFS clustering:
         # NOTE: Recommended on PE Dedicated cluster setup. Required if using Legacy Bridge on PE dedicated cluster setup.
         #PLATFORMSH_DFS_NFS_PATH: 'dfsdata'
@@ -121,7 +121,7 @@ hooks:
             echo "See: https://docs.platform.sh/tutorials/composer-auth.html#set-the-envcomposerauth-project-variable"
         fi
 
-        composer install --no-dev --prefer-dist --no-progress --no-interaction --optimize-autoloader
+        composer install --prefer-dist --no-progress --no-interaction --optimize-autoloader
 
     # Deploy hook, access to services & done once (per cluster, not per node), only mounts are writable at this point
     # Note: Http traffic is paused while this is running, so for prod code this should finish as fast as possible, < 30s
