@@ -4,6 +4,7 @@ namespace App;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use App\Security\PersonalizationPolicyProvider;
 use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
@@ -24,6 +25,15 @@ class Kernel extends BaseKernel
             }
         }
     }
+
+    protected function build(ContainerBuilder $container): void
+    {
+        parent::build($container);
+
+        $extension = $container->getExtension('ezpublish');
+        $extension->addPolicyProvider(new PersonalizationPolicyProvider());
+    }
+
 
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void
     {
