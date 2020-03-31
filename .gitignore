@@ -84,6 +84,7 @@ ide-twig.json
 /.env.local.php
 /.env.*.local
 /public/bundles/
+/public/var/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
