@@ -13,7 +13,7 @@ services:
      - MYSQL_DATABASE=$DATABASE_NAME
 
   install_app:
-    image: ${PHP_IMAGE_DEV}
+    image: ${PHP_IMAGE}
     volumes:
      - ${COMPOSE_DIR}/../..:/var/www:cached
      - ${COMPOSER_HOME}:/root/.composer:cached
