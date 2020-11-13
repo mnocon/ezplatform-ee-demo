@@ -73,6 +73,7 @@ INSTALL_EZ_INSTALL_TYPE=${INSTALL_EZ_INSTALL_TYPE:-clean}
 
 echo "> Start containers and install data"
 docker-compose up -d
+docker-compose exec app composer self-update --2
 docker-compose exec --user www-data app sh -c "php /scripts/wait_for_db.php; php app/console ezplatform:install $INSTALL_EZ_INSTALL_TYPE"
 
 echo "> Done, ready to run behatphpcli container"
